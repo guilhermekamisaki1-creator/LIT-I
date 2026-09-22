@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fernando Pessoa e a Heteronímia — Aula Completa</title>
+<meta name="description" content="Aula completa sobre Fernando Pessoa: heteronomia/heteronímia, fingimento poético, Alberto Caeiro, Ricardo Reis, Álvaro de Campos, o ortônimo e Mensagem.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..800;1,9..144,300..700&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f0e4; --paper:#fffaf1; --paper-2:#fbf4e7; --ink:#2a241f; --ink-2:#5a4f45; --ink-3:#8a7d70;
+  --line:#e6dac6; --line-2:#d8c8ae;
+  --accent:#9a5b2a; --accent-soft:#f3e3cf;
+  --caeiro:#4f7a3a; --caeiro-soft:#e8f0df;
+  --reis:#2f5d8a; --reis-soft:#e2ebf5;
+  --campos:#a8432f; --campos-soft:#f7e2dc;
+  --orto:#9a7417; --orto-soft:#f5ecd2;
+  --comp:#5d5a9a; --comp-soft:#ebeaf7;
+  --warn:#b0492f; --warn-soft:#fbe6df;
+  --star:#9a7417; --star-soft:#fbf1d3;
+  --ok:#3f7a52; --ok-soft:#e1f1e6;
+  --shadow:0 1px 2px rgba(60,40,20,.06),0 8px 24px rgba(60,40,20,.06);
+  --r:14px;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Hanken Grotesk",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Consolas,monospace;
+}
+:root[data-theme="dark"]{
+  --bg:#1c1916; --paper:#25211d; --paper-2:#2b2622; --ink:#efe6d8; --ink-2:#c9bca9; --ink-3:#9a8d7c;
+  --line:#3a332c; --line-2:#4a4138;
+  --accent:#e0a66e; --accent-soft:#3a2c1f;
+  --caeiro:#9cc47f; --caeiro-soft:#26311f;
+  --reis:#8db8e3; --reis-soft:#1e2a36;
+  --campos:#ee9580; --campos-soft:#3a231d;
+  --orto:#e2c066; --orto-soft:#332b17;
+  --comp:#b2afe8; --comp-soft:#2a2940;
+  --warn:#f09a82; --warn-soft:#3a221b;
+  --star:#e8c469; --star-soft:#352c14;
+  --ok:#8fd3a3; --ok-soft:#1e3326;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17.5px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+::selection{background:var(--accent-soft)}
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--caeiro),var(--reis),var(--campos),var(--orto));z-index:100;transition:width .08s linear}
+
+/* topbar */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1320px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:10px 20px}
+.brand{font-family:var(--serif);font-weight:650;font-size:1.05rem;white-space:nowrap;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:8px}
+.brand svg{flex:none}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1}
+.chips::-webkit-scrollbar{display:none}
+.chips a{font-size:.8rem;font-weight:600;text-decoration:none;color:var(--ink-2);padding:6px 11px;border-radius:999px;white-space:nowrap;border:1px solid transparent}
+.chips a.on{background:var(--paper);border-color:var(--line-2);color:var(--ink)}
+.tbtn{flex:none;border:1px solid var(--line-2);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;font:600 .8rem var(--sans);cursor:pointer}
+
+/* layout */
+.wrap{max-width:1320px;margin:0 auto;display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px;padding:0 20px}
+aside.toc{position:sticky;top:72px;align-self:start;max-height:calc(100vh - 90px);overflow:auto;padding:26px 0 30px;font-size:.88rem}
+aside.toc h4{font:700 .72rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px}
+aside.toc a{display:block;text-decoration:none;color:var(--ink-2);padding:5px 10px;border-left:2px solid var(--line);line-height:1.35}
+aside.toc a.sub{padding-left:22px;font-size:.82rem;color:var(--ink-3)}
+aside.toc a.on{border-left-color:var(--accent);color:var(--ink);font-weight:600;background:linear-gradient(90deg,var(--accent-soft),transparent)}
+main{min-width:0;padding-bottom:80px}
+@media (max-width:1080px){.wrap{grid-template-columns:1fr}aside.toc{display:none}}
+@media (min-width:1081px){.chips{display:none}}
+
+/* hero */
+.hero{margin:34px 0 10px;padding:56px 48px 44px;border-radius:22px;background:
+ radial-gradient(1200px 400px at 110% -10%,color-mix(in srgb,var(--orto) 22%,transparent),transparent 60%),
+ radial-gradient(900px 400px at -10% 120%,color-mix(in srgb,var(--reis) 16%,transparent),transparent 60%),
+ var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);position:relative;overflow:hidden}
+.kicker{font:700 .74rem var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(2.2rem,5vw,3.7rem);line-height:1.04;margin:12px 0 14px;letter-spacing:-.02em}
+.hero h1 em{font-weight:400;color:var(--accent)}
+.hero p.lead{font-size:1.14rem;color:var(--ink-2);max-width:760px;margin:0}
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.pill{font-size:.8rem;font-weight:600;padding:5px 12px;border-radius:999px;border:1px solid var(--line-2);background:var(--paper-2);color:var(--ink-2)}
+.pill.c{color:var(--caeiro);border-color:color-mix(in srgb,var(--caeiro) 40%,transparent);background:var(--caeiro-soft)}
+.pill.r{color:var(--reis);border-color:color-mix(in srgb,var(--reis) 40%,transparent);background:var(--reis-soft)}
+.pill.a{color:var(--campos);border-color:color-mix(in srgb,var(--campos) 40%,transparent);background:var(--campos-soft)}
+.pill.o{color:var(--orto);border-color:color-mix(in srgb,var(--orto) 40%,transparent);background:var(--orto-soft)}
+.hero-art{position:absolute;right:34px;top:30px;opacity:.9}
+@media (max-width:760px){.hero{padding:34px 22px 28px}.hero-art{display:none}}
+
+/* sections */
+section.block{margin-top:64px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--line-2);padding-bottom:12px;margin-bottom:22px}
+.sec-num{font:600 .8rem var(--mono);color:var(--accent);background:var(--accent-soft);padding:3px 9px;border-radius:8px;flex:none}
+h2{font-family:var(--serif);font-weight:680;font-size:clamp(1.65rem,3vw,2.2rem);line-height:1.15;margin:0;letter-spacing:-.01em}
+h3{font-family:var(--serif);font-weight:640;font-size:1.38rem;margin:40px 0 10px;line-height:1.25}
+h4{font-family:var(--sans);font-weight:700;font-size:1.02rem;margin:26px 0 6px;color:var(--ink)}
+p{margin:0 0 14px}
+ul,ol{padding-left:1.3em;margin:0 0 16px}
+li{margin:4px 0}
+strong{font-weight:700}
+.muted{color:var(--ink-3)}
+hr.soft{border:0;border-top:1px dashed var(--line-2);margin:34px 0}
+
+/* heteronym section banners */
+.banner{border-radius:18px;padding:26px 28px;margin-bottom:24px;border:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
+.banner.c{background:var(--caeiro-soft)} .banner.r{background:var(--reis-soft)} .banner.a{background:var(--campos-soft)} .banner.o{background:var(--orto-soft)}
+.banner .mono-ic{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font:700 1.9rem var(--serif);color:#fff}
+:root[data-theme="dark"] .banner .mono-ic{color:#1c1916}
+.banner.c .mono-ic{background:var(--caeiro)}.banner.r .mono-ic{background:var(--reis)}.banner.a .mono-ic{background:var(--campos)}.banner.o .mono-ic{background:var(--orto)}
+.banner h3{margin:0 0 4px;font-size:1.5rem}
+.banner p{margin:0;color:var(--ink-2)}
+@media (max-width:600px){.banner{grid-template-columns:1fr}}
+
+/* cards / callouts */
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;box-shadow:var(--shadow);margin:18px 0}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:900px){.grid3,.grid4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.grid2,.grid3,.grid4{grid-template-columns:1fr}}
+@media (max-width:700px){.tw::before{content:"↔ arraste a tabela para o lado";display:block;font:600 .72rem var(--sans);color:var(--ink-3);padding:8px 14px 0}}
+.grid2 .card,.grid3 .card,.grid4 .card{margin:0}
+.mini{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.mini h5{margin:0 0 6px;font:700 .95rem var(--sans)}
+.mini p{margin:0;font-size:.95rem;color:var(--ink-2)}
+.mini.c{border-top:4px solid var(--caeiro)}.mini.r{border-top:4px solid var(--reis)}.mini.a{border-top:4px solid var(--campos)}.mini.o{border-top:4px solid var(--orto)}
+
+.box{border-radius:12px;padding:16px 20px 14px 20px;margin:18px 0;border:1px solid;position:relative}
+.box .tag{display:inline-flex;align-items:center;gap:6px;font:700 .72rem var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+.box p:last-child,.box ul:last-child,.box ol:last-child{margin-bottom:0}
+.box.comp{background:var(--comp-soft);border-color:color-mix(in srgb,var(--comp) 30%,transparent)} .box.comp .tag{color:var(--comp)}
+.box.warn{background:var(--warn-soft);border-color:color-mix(in srgb,var(--warn) 30%,transparent)} .box.warn .tag{color:var(--warn)}
+.box.star{background:var(--star-soft);border-color:color-mix(in srgb,var(--star) 35%,transparent)} .box.star .tag{color:var(--star)}
+.box.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 30%,transparent)} .box.ok .tag{color:var(--ok)}
+.box.mat{background:var(--paper-2);border-color:var(--line-2)} .box.mat .tag{color:var(--ink-3)}
+.box.doubt{background:var(--paper-2);border:1px dashed var(--line-2)} .box.doubt .tag{color:var(--ink-3)}
+.comp-lead{font-weight:700;color:var(--comp)}
+
+/* poems */
+.poem{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--line-2);border-radius:12px;padding:20px 24px;margin:18px 0;font-family:var(--serif);font-size:1.04rem;line-height:1.62}
+.poem.c{border-left-color:var(--caeiro)}.poem.r{border-left-color:var(--reis)}.poem.a{border-left-color:var(--campos)}.poem.o{border-left-color:var(--orto)}
+.poem .pt{font:700 .78rem var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:10px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.poem .pt b{color:var(--ink);letter-spacing:.04em;text-transform:none;font:700 1.05rem var(--serif)}
+.poem .v{white-space:pre-line}
+.poem .cut{color:var(--ink-3);font-family:var(--sans);font-size:.85rem}
+.poem mark{background:color-mix(in srgb,var(--star) 28%,transparent);color:inherit;padding:0 2px;border-radius:3px}
+.poem.two{columns:2;column-gap:40px}
+@media (max-width:700px){.poem.two{columns:1}}
+.poem-note{font-family:var(--sans);font-size:.92rem;color:var(--ink-2);border-top:1px dashed var(--line-2);margin-top:14px;padding-top:10px}
+details.poem summary{cursor:pointer;font:700 .9rem var(--sans);color:var(--accent);list-style:none}
+details.poem summary::-webkit-details-marker{display:none}
+details.poem summary::before{content:"▸ ";}
+details.poem[open] summary::before{content:"▾ ";}
+
+/* diagrams */
+pre.dg{font-family:var(--mono);font-size:.84rem;line-height:1.55;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:18px 20px;overflow-x:auto;color:var(--ink);margin:18px 0;white-space:pre}
+.dg .k{color:var(--accent);font-weight:600}.dg .c{color:var(--caeiro);font-weight:600}.dg .r{color:var(--reis);font-weight:600}.dg .a{color:var(--campos);font-weight:600}.dg .o{color:var(--orto);font-weight:600}
+
+/* tables */
+.tw{overflow-x:auto;margin:18px 0;border-radius:12px;border:1px solid var(--line);background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:.95rem;min-width:560px}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+thead th{background:var(--paper-2);font:700 .8rem var(--sans);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-2)}
+tbody tr:last-child td{border-bottom:0}
+td.c,th.c{color:var(--caeiro)}td.r,th.r{color:var(--reis)}td.a,th.a{color:var(--campos)}td.o,th.o{color:var(--orto)}
+th.c,th.r,th.a,th.o{font-weight:800}
+
+/* timeline */
+.tl{position:relative;margin:20px 0;padding-left:26px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line-2)}
+.tl .ev{position:relative;margin:0 0 16px}
+.tl .ev::before{content:"";position:absolute;left:-23px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:3px solid var(--accent)}
+.tl .ev.c::before{border-color:var(--caeiro)}.tl .ev.r::before{border-color:var(--reis)}.tl .ev.a::before{border-color:var(--campos)}.tl .ev.o::before{border-color:var(--orto)}
+.tl .when{font:600 .82rem var(--mono);color:var(--accent)}
+.tl .ev p{margin:2px 0 0}
+
+/* key formula */
+.formula{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin:22px 0;font-family:var(--serif);font-size:1.12rem}
+.formula span.t{background:var(--paper);border:1px solid var(--line-2);border-radius:10px;padding:8px 14px}
+.formula span.op{font-family:var(--mono);color:var(--accent);font-weight:700}
+
+/* videos */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;margin:18px 0}
+.vcard{display:flex;flex-direction:column;gap:6px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
+.vcard:hover{transform:translateY(-2px);border-color:var(--accent)}
+.vcard .vt{font:650 1.02rem var(--serif);line-height:1.3}
+.vcard .vc{font-size:.85rem;color:var(--ink-3)}
+.vcard .vw{font-size:.88rem;color:var(--ink-2)}
+.vcard .play{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font:700 .85rem var(--sans);color:#fff;background:#c4302b;border-radius:999px;padding:7px 14px;align-self:flex-start}
+.vtopic{font:700 .72rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:26px 0 4px}
+
+/* quiz */
+.q{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0}
+.q .qv{font-family:var(--serif);font-size:1.08rem;white-space:pre-line;margin-bottom:12px}
+.q .opts{display:flex;flex-wrap:wrap;gap:8px}
+.q button{font:600 .88rem var(--sans);padding:8px 14px;border-radius:999px;border:1px solid var(--line-2);background:var(--paper-2);color:var(--ink);cursor:pointer}
+.q button:hover{border-color:var(--accent)}
+.q button.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ok)}
+.q button.wrong{background:var(--warn-soft);border-color:var(--warn);color:var(--warn)}
+.q .fb{display:none;margin-top:12px;font-size:.95rem;color:var(--ink-2);border-top:1px dashed var(--line-2);padding-top:10px}
+.q.done .fb{display:block}
+.score{font:700 1rem var(--sans);padding:10px 16px;border-radius:12px;background:var(--accent-soft);display:inline-block}
+
+.checklist{list-style:none;padding:0}
+.checklist li{padding:8px 0 8px 32px;position:relative;border-bottom:1px dashed var(--line)}
+.checklist li::before{content:"✓";position:absolute;left:4px;top:8px;width:20px;height:20px;border-radius:6px;background:var(--ok-soft);color:var(--ok);font-weight:800;font-size:.8rem;display:grid;place-items:center}
+
+footer{margin-top:70px;padding:30px 0;border-top:1px solid var(--line);color:var(--ink-3);font-size:.88rem}
+.backtop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;border:1px solid var(--line-2);background:var(--paper);color:var(--ink);font-size:1.1rem;cursor:pointer;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .2s}
+.backtop.show{opacity:1;pointer-events:auto}
+
+@media print{
+  .topbar,aside.toc,#progress,.backtop,.tbtn{display:none!important}
+  .wrap{display:block;padding:0}
+  body{background:#fff;font-size:11.5pt}
+  .card,.poem,.box,.tw,.mini,.vcard,.q{box-shadow:none;break-inside:avoid}
+  section.block{break-before:auto}
+  details.poem{display:block}
+  details.poem>*{display:block}
+  .hero{box-shadow:none}
+  a{color:inherit}
+  .vcard::after{content:" — " attr(href);font-size:8pt;word-break:break-all}
+}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#inicio">
+      <svg width="30" height="22" viewBox="0 0 60 44" aria-hidden="true"><path d="M8 18c2-9 9-14 22-14s20 5 22 14c3 0 7 1 7 3s-8 4-29 4S1 23 1 21s4-3 7-3z" fill="currentColor" opacity=".85"/><circle cx="19" cy="35" r="7" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="41" cy="35" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M26 35h8" stroke="currentColor" stroke-width="3"/></svg>
+      Pessoa &amp; os outros “eus”
+    </a>
+    <nav class="chips" id="chips"></nav>
+    <button class="tbtn" id="themeBtn" type="button" aria-label="Alternar tema">◐ Tema</button>
+  </div>
+</header>
+
+<div class="wrap">
+<aside class="toc" id="toc">
+  <h4>Roteiro da aula</h4>
+  <a href="#visao">Visão geral</a>
+  <a href="#pessoa">Quem foi Pessoa</a>
+  <a href="#conceito">1. Heteronomia × heteronímia</a>
+  <a href="#genese">2. A gênese dos heterônimos</a>
+  <a href="#fingimento">3. O fingimento poético</a>
+  <a href="#caeiro">4. Alberto Caeiro</a>
+  <a class="sub" href="#caeiro-guardador">O Guardador de Rebanhos</a>
+  <a class="sub" href="#caeiro-pastor">O Pastor Amoroso</a>
+  <a class="sub" href="#caeiro-inconjuntos">Poemas Inconjuntos</a>
+  <a href="#reis">5. Ricardo Reis</a>
+  <a href="#campos">6. Álvaro de Campos</a>
+  <a class="sub" href="#campos-fases">As três fases</a>
+  <a href="#ortonimo">7. Pessoa ortônimo</a>
+  <a class="sub" href="#mensagem">Mensagem</a>
+  <a href="#comparacao">8. Quadro comparativo</a>
+  <a href="#pegadinhas">9. Pegadinhas</a>
+  <a href="#prova">10. O que mais cai</a>
+  <a href="#videos">11. Vídeos</a>
+  <a href="#revisao">12. Revisão + teste</a>
+</aside>
+
+<main>
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <svg class="hero-art" width="150" height="120" viewBox="0 0 60 44" aria-hidden="true" style="color:var(--accent)"><path d="M8 18c2-9 9-14 22-14s20 5 22 14c3 0 7 1 7 3s-8 4-29 4S1 23 1 21s4-3 7-3z" fill="currentColor" opacity=".8"/><circle cx="19" cy="35" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="41" cy="35" r="7" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M26 35h8" stroke="currentColor" stroke-width="2.5"/></svg>
+  <div class="kicker">Literatura Portuguesa · Modernismo · Aulas 23 e 26 + apostila</div>
+  <h1>Fernando Pessoa<br><em>e seus outros “eus”</em></h1>
+  <p class="lead">Do conceito de heteronomia ao fingimento poético, passando por cada heterônimo e pelo livro <em>Mensagem</em>. O objetivo é que você consiga olhar um trecho qualquer e dizer <strong>quem escreveu, por quê, e como provar isso no próprio texto</strong>.</p>
+  <div class="hero-meta">
+    <span class="pill c">Alberto Caeiro · sentidos</span>
+    <span class="pill r">Ricardo Reis · razão</span>
+    <span class="pill a">Álvaro de Campos · emoção</span>
+    <span class="pill o">Pessoa ortônimo · imaginação</span>
+  </div>
+</section>
+
+<div class="box mat">
+  <div class="tag">📚 Sobre o material usado</div>
+  <p>Esta aula foi montada a partir de três arquivos: os slides da <strong>Aula 23 – “Fernando Pessoa e sua heteronomia”</strong>, os slides da <strong>Aula 26 – “Fernando Pessoa”</strong> e a apostila <strong>“Fernando Pessoa – Trajetória poética”</strong> (Colégio Agostiniano Mendel, Profa. Maria Odete Rodrigues Macedo). Tudo o que não está nesses arquivos aparece marcado com <span class="comp-lead">“Complemento para melhor compreensão:”</span>. Onde havia dúvida de leitura ou algum erro no material, deixei um aviso.</p>
+</div>
+
+<!-- VISÃO GERAL -->
+<section class="block" id="visao">
+  <div class="sec-head"><span class="sec-num">00</span><h2>Visão geral do tema</h2></div>
+  <p>Fernando Pessoa é o grande nome do <strong>Modernismo português</strong>. Muitos poetas escrevem sobre si mesmos. Pessoa fez algo diferente: <strong>criou outros poetas</strong>. Cada um tem nome, biografia, aparência, profissão, visão de mundo e <em>estilo próprio</em>. São os <strong>heterônimos</strong>.</p>
+  <p>Os três heterônimos principais e o próprio Pessoa (chamado de <strong>ortônimo</strong> quando assina com o nome verdadeiro) são quatro maneiras diferentes de responder a uma pergunta: <em>como o ser humano pode conhecer o mundo e a si mesmo?</em></p>
+
+<pre class="dg">                          <span class="k">FERNANDO PESSOA</span> (1888–1935)
+                  “Sou a cena viva onde passam vários atores”
+                                   │
+         ┌─────────────────────────┼──────────────────────────┐
+         │                         │                          │
+   <span class="k">HETERÔNIMOS</span>              <span class="k">ORTÔNIMO</span>             <span class="k">TEORIA POR TRÁS</span>
+         │                  (Pessoa “ele mesmo”)           de tudo
+  ┌──────┼───────────┐        │           │                   │
+  │      │           │        │           │          <span class="k">FINGIMENTO POÉTICO</span>
+<span class="c">CAEIRO</span>  <span class="r">R. REIS</span>   <span class="a">Á. DE CAMPOS</span>  <span class="o">Lírico</span>   <span class="o">Mensagem</span>      “O poeta é um fingidor”
+<span class="c">mestre</span>  <span class="r">clássico</span>  <span class="a">moderno</span>      <span class="o">Cancioneiro</span> <span class="o">nacionalista</span>
+<span class="c">sentidos</span> <span class="r">razão</span>    <span class="a">emoção</span>       <span class="o">imaginação</span>  <span class="o">sebastianista</span></pre>
+
+  <div class="grid4">
+    <div class="mini c"><h5>Alberto Caeiro</h5><p>O “mestre”. Poeta-pastor, só aceita o que os sentidos captam. Quer “ver sem pensar”.</p></div>
+    <div class="mini r"><h5>Ricardo Reis</h5><p>O clássico. Odes em linguagem erudita, deuses gregos, estoicismo e epicurismo, <em>carpe diem</em>.</p></div>
+    <div class="mini a"><h5>Álvaro de Campos</h5><p>O engenheiro moderno. Máquinas e excesso (futurismo) que terminam em tédio, angústia e o “NÃO”.</p></div>
+    <div class="mini o"><h5>Pessoa ortônimo</h5><p>Lirismo musical e introspectivo, o fingimento poético e o nacionalismo místico de <em>Mensagem</em>.</p></div>
+  </div>
+
+  <div class="box star"><div class="tag">★ A frase-síntese da apostila (decore)</div>
+  <p><strong>Caeiro</strong> “pensa” com os <strong>sentidos</strong> · <strong>Reis</strong> “pensa” com a <strong>razão</strong> · <strong>Campos</strong> “pensa” com a <strong>emoção</strong> · <strong>Pessoa</strong> “pensa” com a <strong>imaginação</strong>.</p></div>
+</section>
+
+<!-- QUEM FOI PESSOA -->
+<section class="block" id="pessoa">
+  <div class="sec-head"><span class="sec-num">00b</span><h2>Quem foi Fernando Pessoa</h2></div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p>Os slides e a apostila não trazem uma biografia completa de Pessoa. Estes dados ajudam a entender a obra:</p>
+  </div>
+  <div class="tl">
+    <div class="ev"><span class="when">1888</span><p>Nasce em Lisboa, em 13 de junho.</p></div>
+    <div class="ev"><span class="when">1893</span><p>O pai morre de <strong>tuberculose</strong>. (A apostila liga isso a Caeiro, que também morre tuberculoso. Veja as “Notas especiais sobre Caeiro”.)</p></div>
+    <div class="ev"><span class="when">1896–1905</span><p>Vive em Durban, na África do Sul, e estuda em escola inglesa. Por isso escreve muito bem em inglês. A apostila chama o inglês de “a língua do exílio de Pessoa e de Álvaro de Campos” (daí o título <em>Lisbon Revisited</em>).</p></div>
+    <div class="ev"><span class="when">1905 →</span><p>Volta a Lisboa, onde passa o resto da vida. Trabalha como correspondente comercial (traduzia cartas de empresas) e publica pouco em livro.</p></div>
+    <div class="ev a"><span class="when">1914</span><p><strong>8 de março, o “dia triunfal”</strong>: surgem Alberto Caeiro, Ricardo Reis e Álvaro de Campos (segundo a carta de 1935).</p></div>
+    <div class="ev"><span class="when">1915</span><p>Revista <strong><em>Orpheu</em></strong>, com Mário de Sá-Carneiro e Almada Negreiros. É o marco inicial do Modernismo português. A <em>Ode Triunfal</em>, de Campos, sai nessa revista.</p></div>
+    <div class="ev o"><span class="when">1934</span><p>Publica <strong><em>Mensagem</em></strong>, seu único livro em português publicado em vida.</p></div>
+    <div class="ev"><span class="when">1935</span><p>Em janeiro, escreve a carta a Adolfo Casais Monteiro sobre a gênese dos heterônimos. Morre em 30 de novembro, em Lisboa. Deixa uma arca com milhares de textos inéditos.</p></div>
+  </div>
+  <p class="muted" style="font-size:.92rem">As ilustrações dos slides, com Pessoa de chapéu, óculos redondos e bigode, seguem a imagem que ficou famosa graças ao pintor <strong>Almada Negreiros</strong>. Um dos slides cita “Ilustrações de Almada Negreiros”.</p>
+
+  <div class="box warn"><div class="tag">⚠ Cuidado com uma frase dos slides</div>
+  <p>O slide 2 da Aula 26 traz: <em>“O valor das coisas não está no tempo que elas duram, mas na intensidade com que acontecem…”</em>, assinada “Fernando Pessoa”.</p>
+  <p><span class="comp-lead">Complemento para melhor compreensão:</span> essa frase circula muito na internet com o nome de Pessoa, mas <strong>não aparece na obra conhecida dele</strong>. O site Pensador, por exemplo, credita a frase a Maria Júlia Paes da Silva (livro <em>Qual o tempo do cuidado?</em>, 2004). Não use essa frase como citação de Pessoa numa redação. A outra citação do mesmo bloco, “Criei em mim várias personalidades…”, <strong>é</strong> dele (<em>Livro do Desassossego</em>).</p></div>
+</section>
+
+<!-- 1. CONCEITO -->
+<section class="block" id="conceito">
+  <div class="sec-head"><span class="sec-num">01</span><h2>Um conceito complexo: heteronomia (e heteronímia)</h2></div>
+  <p>A Aula 23 começa pelo conceito antes de chegar aos poemas. É a “preparação para a leitura de Pessoa e seus outros ‘EUS’”. Vamos por partes.</p>
+
+  <h3>1.1 O dicionário</h3>
+  <div class="card">
+    <p><strong>Heteronomia</strong>:</p>
+    <ol>
+      <li>Sujeição a uma lei exterior ou à vontade de outrem; ausência de autonomia.</li>
+      <li>Qualidade ou estado do que é heterônomo.</li>
+    </ol>
+  </div>
+
+  <h3>1.2 Origem etimológica</h3>
+  <p>A melhor forma de entender uma palavra difícil é desmontá-la:</p>
+<pre class="dg"><span class="k">AUTONOMIA</span>   =  auto (“próprio”)       +  nomos (“norma / regra”)
+            →  estabelecer as <b>próprias</b> regras (morais)
+
+<span class="k">HETERONOMIA</span> =  heteros (“outro, diverso”) +  nomos (“regras”)
+            →  viver sob regras que vêm <b>de outro</b></pre>
+
+  <h3>1.3 Uma visão filosófica: Kant</h3>
+  <p>Segundo o slide, <strong>heteronomia</strong> é um conceito criado pelo filósofo <strong>Kant</strong> para nomear a sujeição do indivíduo à vontade de terceiros ou de uma coletividade. O oposto é a <strong>autonomia</strong>, em que a pessoa tem arbítrio e pode expressar sua vontade livremente.</p>
+  <div class="box mat"><div class="tag">Conclusão do slide</div>
+  <p>“Agir para satisfazer sua própria vontade pode significar agir com autonomia, e ignorar a vontade dos outros significa agir sem heteronomia.”</p></div>
+
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão (cuidado se cair em Filosofia)</div>
+  <p>A conclusão do slide simplifica bastante o pensamento de Kant. Para ele, <strong>autonomia</strong> não é “fazer o que eu quero”. É a vontade obedecer a uma lei moral que a <strong>própria razão</strong> formula e que valeria para todos (o imperativo categórico). <strong>Heteronomia</strong> é agir movido por algo externo à razão: desejos, medo de punição, busca de recompensa, pressão dos outros.</p>
+  <p>Portanto, para Kant, “agir só para satisfazer meus desejos” seria <strong>heteronomia</strong>, porque quem manda é o desejo, não a razão. Em Literatura, basta a ideia geral (autonomia = regra própria; heteronomia = regra de outro). Numa prova de Filosofia, use a definição correta.</p></div>
+
+  <h3>1.4 Heteronomia × heteronímia: a pegadinha do nome</h3>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p>Repare em duas palavras quase iguais:</p>
+  <div class="tw"><table>
+    <thead><tr><th>Palavra</th><th>Formação</th><th>Sentido</th><th>Área</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Heteronomia</strong></td><td>heteros + <strong>nomos</strong> (regra)</td><td>Viver sob a lei de outro</td><td>Filosofia (Kant)</td></tr>
+      <tr><td><strong>Heteronímia</strong> / <strong>heterônimo</strong></td><td>heteros + <strong>ónoma/ónyma</strong> (nome)</td><td>“Outro nome” que corresponde a <strong>outra personalidade</strong> completa</td><td>Literatura (Pessoa)</td></tr>
+    </tbody></table></div>
+  <p>O fenômeno de Pessoa se chama, tecnicamente, <strong>heteronímia</strong>, e seus poetas são <strong>heterônimos</strong>. Nas questões de vestibular, é essa a palavra que aparece.</p>
+  <p><strong>Por que então a aula fala em “heteronomia”?</strong> A interpretação mais provável é que seja um recurso didático. O professor parte do conceito filosófico (“sujeitar-se à regra de outro”) para mostrar que, ao escrever como Caeiro, Reis ou Campos, Pessoa se submete às <strong>regras de outro eu</strong>: outra visão de mundo, outro estilo, outro ritmo. Cada heterônimo tem seu próprio <em>nomos</em>, sua própria poética. Os dois sentidos se encaixam, mas em prova use <strong>heterônimo/heteronímia</strong>.</p></div>
+
+  <h3>1.5 Pseudônimo × heterônimo × ortônimo</h3>
+  <p>A apostila insiste: <strong>não confunda pseudônimo com heterônimo</strong>.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Termo</th><th>O que é</th><th>Exemplo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pseudônimo</strong></td><td>Um <em>nome falso</em> que o artista usa. A pessoa continua a mesma, com o mesmo estilo e as mesmas ideias. Só muda a assinatura.</td><td><span class="muted">Complemento:</span> “Tristão de Athayde” era o pseudônimo do crítico Alceu Amoroso Lima.</td></tr>
+      <tr><td><strong>Heterônimo</strong></td><td>Uma <em>individualidade diferente</em>, com personalidade, características físicas e história de vida próprias. É como um personagem-autor criado por “um extraordinário criador”.</td><td>Alberto Caeiro, Ricardo Reis, Álvaro de Campos…</td></tr>
+      <tr><td><strong>Ortônimo</strong></td><td><span class="muted">Complemento:</span> do grego <em>orthós</em> (“correto, verdadeiro”) + <em>ónyma</em>. É o autor assinando com o <strong>nome verdadeiro</strong>. A apostila chama de “Fernando Pessoa, ele mesmo”.</td><td>Fernando Pessoa em <em>Mensagem</em> e no <em>Cancioneiro</em></td></tr>
+    </tbody></table></div>
+
+<pre class="dg">PSEUDÔNIMO        mesmo autor   ──► <b>nome diferente</b>     (só a máscara do nome muda)
+HETERÔNIMO        <b>outro autor</b>   ──► nome + vida + estilo + visão de mundo diferentes
+ORTÔNIMO          o autor real  ──► assina com o próprio nome (e ainda assim “finge”)</pre>
+
+  <h3>1.6 A leitura crítica: o poeta-poliedro (Massaud Moisés)</h3>
+  <p>A apostila traz um comentário do crítico <strong>Massaud Moisés</strong> (<em>A literatura portuguesa</em>, Cultrix). As ideias principais, em ordem:</p>
+  <ol>
+    <li><strong>Multiplicação interior</strong>: Pessoa se multiplica por dentro “como se fosse um imenso <strong>poliedro</strong>”, uma figura de muitas faces.</li>
+    <li><strong>O preço</strong>: a <strong>despersonalização</strong> do indivíduo, a “desintegração do eu”.</li>
+    <li><strong>A ambiguidade</strong>: esse processo torna Pessoa “uno e diviso ao mesmo tempo” e o salva de uma egolatria (culto do próprio eu) que poderia levá-lo à loucura.</li>
+    <li><strong>O nascimento dos heterônimos</strong>: eles vêm desse desdobramento. Não são pseudônimos. São “outros poetas, com identidades, ‘vida’ e sentido autônomos”.</li>
+    <li><strong>Polipersonalidade</strong>: “a dupla personalidade é frequente, não assim a polipersonalidade”.</li>
+    <li><strong>A finalidade</strong>: ver o mundo “como os outros o veem, viram e verão” e, assim, chegar mais perto de “alguma verdade menos contingente” num mundo de relativismo.</li>
+  </ol>
+<pre class="dg">            ┌─ face <span class="c">Caeiro</span>   (sensação)
+            ├─ face <span class="r">Reis</span>     (razão clássica)
+  PESSOA ◇──┼─ face <span class="a">Campos</span>   (emoção moderna)       custo: despersonalização
+ (poliedro) ├─ face <span class="o">ortônimo</span> (imaginação)          ganho: ver o mundo por vários ângulos
+            └─ …outras (Bernardo Soares, etc.)</pre>
+
+  <h3>1.7 Nas palavras do próprio Pessoa</h3>
+  <div class="poem o"><div class="pt"><b>Livro do Desassossego</b> · citado na apostila e no slide 3 da Aula 26</div>
+  <div class="v">“Criei em mim várias personalidades. Crio personalidades constantemente. Cada sonho meu é imediatamente, logo ao aparecer sonhado, encarnado numa outra pessoa, que passa a sonhá-lo, e eu não.
+Para criar, destruí-me; tanto me exteriorizei dentro de mim, que dentro de mim não existo senão exteriormente. <mark>Sou a cena viva onde passam vários atores representando várias peças.</mark>”</div>
+  <div class="poem-note"><strong>Como interpretar:</strong> Pessoa se descreve como um <em>palco</em>, e os heterônimos são os <em>atores</em>. O sonho não fica com ele: “passa a ser” de outra pessoa. “Para criar, destruí-me” retoma a ideia de Massaud Moisés: criar os outros custa o próprio eu.<br><span class="comp-lead">Complemento:</span> o <em>Livro do Desassossego</em> é assinado por Bernardo Soares, que Pessoa chamou de <strong>semi-heterônimo</strong>, porque ele seria “uma mutilação” da sua própria personalidade.</div></div>
+
+  <div class="box warn"><div class="tag">⚠ Diferença de versão</div>
+  <p>O slide da Aula 26 cita a frase sem a palavra “encarnado” (“logo ao aparecer sonhado numa outra pessoa”). A apostila traz a versão completa (“sonhado, <strong>encarnado</strong> numa outra pessoa”). O sentido é o mesmo, mas a versão da apostila é a mais fiel.</p></div>
+</section>
+
+<!-- 2. GÊNESE -->
+<section class="block" id="genese">
+  <div class="sec-head"><span class="sec-num">02</span><h2>A gênese dos heterônimos: a carta a Casais Monteiro e o olhar do poeta</h2></div>
+  <p>A apostila diz que nada é “mais significativo que a leitura da carta de Fernando Pessoa ao amigo <strong>Adolfo Casais Monteiro</strong>, escrita em janeiro de 1935”. É o documento mais citado sobre os heterônimos.</p>
+
+  <h3>2.1 A “parte psiquiátrica”: de onde vêm os heterônimos</h3>
+  <div class="poem"><div class="pt"><b>Carta a Casais Monteiro</b> · trecho</div>
+  <div class="v">“A origem dos meus heterônimos é o fundo traço de histeria que existe em mim. […] <mark>a origem mental dos meus heterônimos está na minha tendência orgânica e constante para a despersonalização e para a simulação.</mark> Estes fenômenos […] mentalizaram-se em mim; quero dizer, não se manifestam na minha vida prática, exterior e de contato com outros; fazem explosão para dentro e vivo-os eu a sós comigo. […] cada poema de Álvaro de Campos (o mais histericamente histérico de mim) seria um alarme para a vizinhança. Mas sou homem — e nos homens a histeria assume principalmente aspectos mentais; assim <mark>tudo acaba em silêncio e poesia…</mark>”</div>
+  <div class="poem-note"><strong>O que tirar daqui:</strong> duas palavras-chave, <strong>despersonalização</strong> (deixar de ser “eu”) e <strong>simulação</strong> (fingir ser outro). Em Pessoa, isso “explode para dentro” e vira literatura.<br><span class="comp-lead">Complemento:</span> “histeria” e “histero-neurastênico” são termos da psiquiatria do começo do século XX, hoje fora de uso. Na carta, a comparação entre homens e mulheres reflete ideias daquela época, não conhecimento médico atual. Para a prova, guarde a ideia central (despersonalização + simulação), não o diagnóstico.</div></div>
+
+  <h3>2.2 Linha do tempo da criação (segundo a carta)</h3>
+  <div class="tl">
+    <div class="ev"><span class="when">Infância (6 anos)</span><p>O primeiro “conhecido inexistente”: <strong>Chevalier de Pas</strong>. Pessoa escrevia cartas “dele” para si mesmo. Havia também um rival do Chevalier, cujo nome ele esqueceu. Desde criança tinha a “tendência para criar em meu torno um mundo fictício”.</p></div>
+    <div class="ev"><span class="when">Maioridade</span><p>Quando lhe ocorria um “dito de espírito” alheio a quem ele era, atribuía-o a um amigo inventado na hora, com nome, história e figura. Trinta anos depois, diz que ainda “oiço, sinto, vejo… E tenho saudades deles”.</p></div>
+    <div class="ev r"><span class="when">≈ 1912</span><p>Tem a ideia de escrever poemas “de índole pagã”, em verso de “meia regularidade”. Abandona, mas surge “um vago retrato da pessoa que estava a fazer aquilo”: “(Tinha nascido, sem que eu soubesse, o Ricardo Reis.)”</p></div>
+    <div class="ev c"><span class="when">8 de março de 1914</span><p><strong>O “dia triunfal”.</strong> Quer pregar uma peça em Sá-Carneiro inventando “um poeta bucólico, de espécie complicada”. Depois de desistir, escreve <strong>de pé</strong>, numa cômoda alta, “trinta e tantos poemas a fio, numa espécie de êxtase”: <em>O Guardador de Rebanhos</em>. “Aparecera, em mim, o meu mestre”: <strong>Alberto Caeiro</strong>.</p></div>
+    <div class="ev o"><span class="when">Logo em seguida</span><p>Escreve os seis poemas de <em>Chuva Oblíqua</em>, “de Fernando Pessoa”. Foi “a reação de Fernando Pessoa contra a sua inexistência como Alberto Caeiro”: o ortônimo volta.</p></div>
+    <div class="ev r"><span class="when">Depois</span><p>Descobre “discípulos” para Caeiro. Arranca do “falso paganismo” o Ricardo Reis latente e lhe dá nome.</p></div>
+    <div class="ev a"><span class="when">De repente</span><p>“Em derivação oposta à de Ricardo Reis”, surge <strong>Álvaro de Campos</strong>, “num jato, e à máquina de escrever, sem interrupção nem emenda”: a <em>Ode Triunfal</em>.</p></div>
+  </div>
+
+<pre class="dg">                    <span class="c">CAEIRO</span>  (o mestre, 8/3/1914)
+                   ╱         ╲
+      discípulo  ╱             ╲  discípulo
+               ▼                 ▼
+         <span class="r">RICARDO REIS</span>  ◄── opostos ──►  <span class="a">ÁLVARO DE CAMPOS</span>
+     (paganismo clássico)       (modernidade explosiva)
+                   ╲             ╱
+                    ▼           ▼
+             <span class="o">PESSOA ORTÔNIMO</span> (também “aprende” com Caeiro)</pre>
+
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p>Estudiosos que analisaram os manuscritos de Pessoa mostram que os poemas não foram escritos todos num único dia. O “dia triunfal” é, em parte, uma <strong>narrativa construída</strong> pelo próprio Pessoa. Isso não diminui a carta. Mostra que até o relato da criação faz parte da ficção dos heterônimos (é o <strong>fingimento</strong> de novo). Numa prova, cite a carta como <em>versão de Pessoa</em>.</p></div>
+
+  <h3>2.3 As “fichas” dos heterônimos (dadas pelo próprio Pessoa)</h3>
+  <div class="tw"><table>
+    <thead><tr><th></th><th class="c">Alberto Caeiro</th><th class="r">Ricardo Reis</th><th class="a">Álvaro de Campos</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nascimento</strong></td><td>1889, Lisboa (a apostila dá 16 de abril)</td><td>1887, Porto (a apostila dá 19 de setembro)</td><td>15/10/1890, Tavira, “à 1h30 da tarde”</td></tr>
+      <tr><td><strong>Morte</strong></td><td>1915, tuberculoso</td><td>—</td><td>—</td></tr>
+      <tr><td><strong>Onde vive</strong></td><td>Quase toda a vida no campo, com uma tia-avó</td><td>No Brasil desde 1919 (exilou-se por ser <strong>monárquico</strong>)</td><td>Em Lisboa, “em inatividade”</td></tr>
+      <tr><td><strong>Formação</strong></td><td>Só instrução primária; órfão cedo; vive de pequenos rendimentos</td><td>Colégio de jesuítas; <strong>médico</strong>; “latinista” e “semi-helenista”</td><td>Liceu; <strong>engenharia</strong> mecânica e depois naval em Glasgow (Escócia); latim com um tio padre</td></tr>
+      <tr><td><strong>Aparência</strong></td><td>Estatura média, frágil; louro, olhos azuis</td><td>Um pouco mais baixo, mais forte, “seco”; moreno mate</td><td>Alto (1,75 m), magro, um pouco curvado; <strong>monóculo</strong>, cabelo liso repartido</td></tr>
+      <tr><td><strong>Como Pessoa escreve “por ele”</strong></td><td>“Por pura e inesperada <strong>inspiração</strong>, sem saber ou sequer calcular o que iria escrever.”</td><td>“Depois de uma <strong>deliberação abstrata</strong>, que subitamente se concretiza numa ode.”</td><td>“Quando sinto um súbito <strong>impulso</strong> para escrever e não sei o quê.”</td></tr>
+    </tbody></table></div>
+  <div class="box warn"><div class="tag">⚠ Erro de digitação na apostila</div><p>A apostila escreve “1,75 <strong>in</strong> de altura”. O correto é <strong>1,75 m</strong> (“mais 2 cm do que eu”, diz Pessoa).</p></div>
+  <div class="box star"><div class="tag">★ Repare como as fichas combinam com a poesia</div>
+  <p>Caeiro, que <strong>não estudou</strong>, escreve com linguagem simples, quase oral. Reis, <strong>educado por jesuítas e latinista</strong>, escreve odes eruditas. Campos, <strong>engenheiro</strong>, canta máquinas e motores. A biografia inventada <em>explica</em> o estilo. Isso ajuda muito a reconhecer o autor de um trecho.</p></div>
+
+  <h3>2.4 O olhar do poeta sobre a heteronímia: “À guisa de prefácio”</h3>
+  <p>O slide 4 da Aula 23 (“O próprio autor: um olhar do poeta sobre a heteronomia, a Pessoalidade poética”) traz um texto em que Pessoa apresenta os heterônimos como se fossem autores reais. Estas são as ideias principais, na ordem do texto:</p>
+  <div class="card">
+    <ol>
+      <li><strong>Influências, não mistura.</strong> Se houver semelhanças entre a obra “pessoal” dele e a dos heterônimos, são “legítimas influências literárias”, de um lado ou de outro. Mas “não há semelhança ou coexistência de personalidades”.</li>
+      <li><strong>Cada personalidade é una.</strong> Cada heterônimo é “perfeitamente una consigo própria”. Em Caeiro e Campos, cuja obra tem ordem cronológica, dá para ver a evolução moral e intelectual de cada um.</li>
+      <li><strong>A evolução de Caeiro</strong> (e ela bate com a divisão da apostila em três partes):
+<pre class="dg">“limpidez primitiva” ──► aprofundamento filosófico ──► episódio amoroso ──► doença / fragmentos
+   <span class="c">O Guardador de Rebanhos</span>                        <span class="c">O Pastor Amoroso</span>   <span class="c">Poemas Inconjuntos</span></pre></li>
+      <li><strong>“Finjo? Não finjo.”</strong> Pessoa jura que “estas coisas passaram-se”, “onde se passaram não sei”. E pergunta: “Nunca lá estive — mas acaso sou eu quem escreve?”</li>
+      <li><strong>A inversão provocadora:</strong> “Ah, as sombras sois vós e as vossas sensações.” Para Pessoa, os leitores também vivem de emoções que “nunca se sentiram neste mundo”. Os reais seriam os heterônimos, e as sombras, nós.</li>
+      <li><strong>Não é espiritismo:</strong> “Não me digais que sou médium de espíritos estranhos à terra. Com a terra me quero.”</li>
+      <li><strong>Ordem de publicação sugerida:</strong> Caeiro completo → Ricardo Reis (livros das Odes) → <em>Notas para a Recordação</em> (do mestre Caeiro, escritas por Campos) → um livro de Álvaro de Campos → “a discussão em família”.</li>
+    </ol>
+  </div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p>Pessoa chamou esse conjunto de <strong>“drama em gente”</strong>: em vez de escrever uma peça de teatro com personagens, criou <em>autores</em> que escrevem suas próprias obras, discutem entre si (“a discussão em família”) e têm mestre e discípulos. O slide brinca com a palavra “<strong>Pessoalidade</strong>”, que junta <em>Pessoa</em> e <em>personalidade</em>.</p></div>
+</section>
+
+<!-- 3. FINGIMENTO -->
+<section class="block" id="fingimento">
+  <div class="sec-head"><span class="sec-num">03</span><h2>O fingimento poético: a teoria que explica tudo</h2></div>
+  <p>Se Pessoa cria outros poetas, uma pergunta se impõe: <em>ele está mentindo?</em> A resposta está em dois poemas que funcionam como uma <strong>arte poética</strong> (poemas que explicam como a poesia deve ser feita): <strong>“Autopsicografia”</strong> e <strong>“Isto”</strong>.</p>
+
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: a chave da palavra “fingir”</div>
+  <p>“Fingir” vem do latim <strong><em>fingere</em></strong>, que significava <strong>modelar, dar forma</strong> (como o oleiro molda o barro). Por isso, “o poeta é um fingidor” <strong>não</strong> quer dizer “o poeta é um mentiroso”. Quer dizer que <strong>o poeta dá forma artística à emoção</strong>, e isso a transforma.</p></div>
+
+  <h3>3.1 “Autopsicografia”</h3>
+  <p>Título: <strong>auto</strong> (de si) + <strong>psico</strong> (alma, mente) + <strong>grafia</strong> (escrita) = “a escrita da própria alma”. O poema é um retrato de como a mente do poeta funciona.</p>
+  <div class="poem o"><div class="pt"><b>Autopsicografia</b> · Fernando Pessoa (ortônimo)</div>
+  <div class="v"><mark>O poeta é um fingidor.</mark>
+Finge tão completamente
+Que chega a fingir que é dor
+A dor que deveras sente.
+
+E os que leem o que escreve,
+Na dor lida sentem bem,
+Não as duas que ele teve,
+Mas só a que eles não têm.
+
+E assim nas calhas de roda
+Gira, a entreter a razão,
+Esse comboio de corda
+Que se chama coração.</div></div>
+
+  <h4>Análise estrofe por estrofe</h4>
+  <div class="grid3">
+    <div class="card"><h4 style="margin-top:0">1ª estrofe: o poeta</h4><p>O poeta sente uma dor <strong>real</strong> (“que deveras sente”). Ao escrever, ele a <strong>transforma</strong> numa dor fingida, poética. O paradoxo é que ele finge justamente aquilo que sente.</p></div>
+    <div class="card"><h4 style="margin-top:0">2ª estrofe: o leitor</h4><p>O leitor não sente “as duas que ele teve” (a real e a fingida). Sente uma <strong>terceira</strong>: a “dor lida”, que “eles não têm”. É uma dor criada na leitura, a partir da experiência de cada um.</p></div>
+    <div class="card"><h4 style="margin-top:0">3ª estrofe: coração × razão</h4><p>O <strong>coração</strong> é um “comboio de corda” (trenzinho de brinquedo) que gira nas “calhas de roda” (trilhos) para <strong>entreter a razão</strong>. A emoção serve de matéria para o intelecto trabalhar.</p></div>
+  </div>
+<pre class="dg">   <b>DOR 1</b> — sentida de verdade pelo poeta
+        │   (o poeta “finge” = dá forma artística)
+        ▼
+   <b>DOR 2</b> — dor fingida, escrita no poema
+        │   (o leitor lê)
+        ▼
+   <b>DOR 3</b> — “dor lida”: a que o leitor sente, que não é nenhuma das duas
+
+   Emoção (coração)  ──gira nos trilhos──►  alimenta a Razão
+   → poesia = <b>INTELECTUALIZAÇÃO DA EMOÇÃO</b></pre>
+  <div class="box warn"><div class="tag">⚠ Pegadinha clássica</div>
+  <p>A frase “O poeta é um fingidor” <strong>não</strong> significa que o poeta não sente nada nem que mente. O próprio poema diz que a dor é sentida “deveras”, ou seja, de verdade. O fingimento é a <strong>elaboração</strong> artística do sentimento. Alternativa que diga “o poeta é insincero” ou “a poesia não tem relação com a emoção” está errada.</p></div>
+  <div class="box warn"><div class="tag">⚠ Pequenas variações de texto</div><p>O slide traz “nas calhas <em>da</em> roda” e “Que se chama <em>o</em> coração”. A versão consagrada (e a da apostila) é “calhas <strong>de</strong> roda” e “Que se chama coração”. O sentido não muda.</p></div>
+
+  <h3>3.2 “Isto”: a resposta aos leitores</h3>
+  <div class="poem o two"><div class="pt"><b>Isto</b> · Fernando Pessoa (ortônimo)</div>
+  <div class="v">Dizem que finjo ou minto
+Tudo que escrevo. Não.
+Eu simplesmente sinto
+<mark>Com a imaginação.</mark>
+Não uso o coração.
+
+Tudo o que sonho ou passo,
+O que me falha ou finda,
+É como que um terraço
+Sobre outra coisa ainda.
+Essa coisa é que é linda.
+
+Por isso escrevo em meio
+Do que não está ao pé,
+Livre do meu enleio,
+Sério do que não é.
+<mark>Sentir? Sinta quem lê!</mark></div></div>
+  <div class="box mat"><div class="tag">Observação do slide (Aula 23), explicada</div>
+  <ul>
+    <li>O eu lírico usa a <strong>imaginação</strong> e deixa de lado as emoções brutas (“Não uso o coração”).</li>
+    <li>Tudo o que ele vive é comparado a um <strong>terraço</strong>, um mirante de onde se olha “outra coisa ainda”, mais bonita. A imagem separa as <strong>sensações</strong> vividas da <strong>emoção estética</strong> que a arte produz.</li>
+    <li>O poema foi escrito como resposta à <strong>incompreensão dos leitores</strong> diante de “Autopsicografia”, que o acusaram de fingir ou mentir.</li>
+    <li>No último verso, cabe ao leitor um sentir diferente do poeta. Cada leitor tem liberdade de sentir o poema como quiser, com emoção ou com inteligência.</li>
+    <li>Os dois poemas têm o mesmo tema, o <strong>fingimento poético</strong>, e funcionam como uma <strong>arte poética</strong>: a poesia é a <strong>intelectualização da emoção</strong>.</li>
+  </ul></div>
+  <div class="tw"><table>
+    <thead><tr><th>Ponto</th><th>“Autopsicografia”</th><th>“Isto”</th></tr></thead>
+    <tbody>
+      <tr><td>Ideia central</td><td>O poeta finge (dá forma) à dor que sente</td><td>“Não minto”: sinto com a imaginação</td></tr>
+      <tr><td>Voz</td><td>3ª pessoa (“o poeta”), tom de teoria</td><td>1ª pessoa (“eu”), tom de defesa pessoal</td></tr>
+      <tr><td>Papel do leitor</td><td>Sente “a dor que não tem”</td><td>“Sentir? Sinta quem lê!”</td></tr>
+      <tr><td>Imagem-chave</td><td>Comboio de corda (coração) entretendo a razão</td><td>Terraço sobre “outra coisa”</td></tr>
+    </tbody></table></div>
+
+  <h3>3.3 “Não sei quantas almas tenho”: o nascimento dos heterônimos em poema</h3>
+  <div class="poem o two"><div class="pt"><b>Não sei quantas almas tenho</b> · Fernando Pessoa (ortônimo)</div>
+  <div class="v"><mark>Não sei quantas almas tenho.</mark>
+Cada momento mudei.
+Continuamente me estranho.
+Nunca me vi nem acabei.
+De tanto ser, só tenho alma.
+Quem tem alma não tem calma.
+Quem vê é só o que vê,
+Quem sente não é quem é,
+
+Atento ao que sou e vejo,
+Torno-me eles e não eu.
+Cada meu sonho ou desejo
+É do que nasce e não meu.
+<mark>Sou minha própria paisagem;
+Assisto à minha passagem,</mark>
+Diverso, móbil e só,
+Não sei sentir-me onde estou.
+
+Por isso, alheio, vou lendo
+Como páginas, meu ser.
+O que segue não prevendo,
+O que passou a esquecer.
+Noto à margem do que li
+O que julguei que senti.
+Releio e digo: “Fui eu?”
+Deus sabe, porque o escreveu.</div>
+  <div class="poem-note"><strong>Observação do slide:</strong> há uma meditação sobre si mesmo em que “entrevemos sua mente”. Cada verso é provocado pelo anterior. Ao refletir sobre si (a ideia do <strong>espelho</strong>), o poema reproduz <strong>o nascimento dos heterônimos</strong>.<br><strong>Leitura guiada:</strong> “Torno-me eles e não eu” é a despersonalização. “Sou minha própria paisagem; / Assisto à minha passagem” mostra o eu observando a si mesmo de fora, como espectador. “Releio e digo: ‘Fui eu?’” mostra que nem o que escreveu parece dele: o eu se estranha.<br><span class="comp-lead">Complemento:</span> o slide traz “Nunca me vi nem <em>acabei</em>”. A versão mais difundida do poema é “Nunca me vi nem <strong>achei</strong>”. Nos dois casos a ideia é a de um eu que nunca se completa.</div></div>
+
+  <h3>3.4 Uma reflexão final (slide 8 da Aula 23)</h3>
+  <div class="grid2">
+    <div class="card"><h4 style="margin-top:0">Contra o confessional</h4><p>Pessoa <strong>rejeitou a poesia romântica, confessional</strong>, aquela em que o poeta “desabafa” sua vida. A maneira <strong>modernista</strong> dele exige uma <strong>pluralidade poética</strong>: cada heterônimo é um “fragmento” autêntico do seu eu, moldado em sua personalidade.</p></div>
+    <div class="card"><h4 style="margin-top:0">O eu pelo olhar do outro</h4><p>Há a ideia de que o <strong>autoconhecimento só acontece através do outro</strong>. Olhar para dentro de si só é possível pelo olhar do outro, ou dos outros. Os heterônimos seriam esses “outros” pelos quais Pessoa se vê.</p></div>
+  </div>
+<pre class="dg">ROMANTISMO (confessional)          MODERNISMO de Pessoa
+  eu ──► sentimento ──► poema         eu ──► <b>outros eus</b> ──► vários poemas
+  “sou sincero, sofro, escrevo”       “finjo (dou forma), me multiplico, me vejo pelos outros”</pre>
+</section>
+
+<!-- 4. CAEIRO -->
+<section class="block" id="caeiro">
+  <div class="sec-head"><span class="sec-num">04</span><h2>Alberto Caeiro: o mestre que pensa com os sentidos</h2></div>
+  <div class="banner c"><div class="mono-ic">AC</div><div><h3>Alberto Caeiro (1889–1915)</h3><p>O poeta-pastor e “o mestre”. Nasceu em Lisboa em 16 de abril de 1889. Órfão de pai e mãe, teve só instrução primária (a apostila provoca: “por isso escreveria mal?”). Viveu a maior parte da vida no campo, com uma tia. Morre em 1915, provavelmente tuberculoso.</p></div></div>
+
+  <div class="box ok"><div class="tag">🔑 A ideia central em uma linha</div>
+  <p>Para Caeiro, <strong>o mundo é exatamente o que os sentidos mostram</strong>, nada além disso. Pensar sobre as coisas (filosofia, metafísica, religião) atrapalha o ver. Por isso ele diz: <em>“Pensar é estar doente dos olhos”</em>.</p></div>
+
+  <div class="poem c"><div class="pt"><b>Fragmento-chave</b> · O Guardador de Rebanhos</div>
+  <div class="v">“O essencial é saber ver,
+Saber ver sem estar a pensar,
+Saber ver quando se vê,
+E nem pensar quando se vê
+Nem ver quando se pensa.”</div></div>
+
+  <p>A apostila divide a obra de Caeiro em <strong>três conjuntos</strong>, a mesma evolução que Pessoa descreve em “À guisa de prefácio”:</p>
+<pre class="dg"><span class="c">PARTE A</span> — O Guardador de Rebanhos  →  o Caeiro “puro”: sensação, objetividade, antimetafísica
+<span class="c">PARTE B</span> — O Pastor Amoroso         →  o mestre apaixonado: um momento de fraqueza humana
+<span class="c">PARTE C</span> — Poemas Inconjuntos        →  aprofundamento e intensificação (e a doença, a morte)</pre>
+
+  <!-- PARTE A -->
+  <h3 id="caeiro-guardador">Parte A — <em>O Guardador de Rebanhos</em></h3>
+  <p class="muted">Principais características do poeta em seu primeiro conjunto de poemas (apostila), explicadas uma a uma com os poemas.</p>
+
+  <h4>1. Poeta bucólico</h4>
+  <p>Escreve em contato com a <strong>natureza</strong>. “Bucólico” vem do grego <em>boukólos</em>, “pastor de bois”: poesia do campo e da vida simples. Atenção: Caeiro <em>não</em> é pastor de verdade. O “rebanho” é metafórico.</p>
+  <div class="poem c two"><div class="pt"><b>I</b> · O Guardador de Rebanhos (trechos)</div>
+  <div class="v"><mark>Eu nunca guardei rebanhos,
+Mas é como se os guardasse.</mark>
+Minha alma é como um pastor,
+Conhece o vento e sol
+E anda pela mão das Estações
+A seguir e a olhar.
+Toda a paz da Natureza sem gente
+Vem sentar-se a meu lado.
+Mas eu fico triste como um pôr de sol
+Para a nossa imaginação,
+Quando esfria no fundo da planície
+E sente a noite entrada
+Como uma borboleta pela janela.
+
+Mas a minha tristeza é sossego
+Porque é natural e justa
+E é o que deve estar na alma
+Quando já pensa que existe
+E as mãos colhem flores sem ela dar por isso.
+
+Como um ruído de chocalhos
+Para além da curva da estrada,
+Os meus pensamentos são contentes.
+Só tenho pena de saber que eles são contentes,
+Porque, se o não soubesse,
+Em vez de serem contentes e tristes,
+Seriam alegres e contentes.
+<mark>Pensar incomoda como andar à chuva</mark>
+Quando o vento cresce e parece que chove mais.
+
+Não tenho ambições nem desejos.
+<mark>Ser poeta não é uma ambição minha.
+É a minha maneira de estar sozinho.</mark>
+<span class="cut">[…]</span>
+Quando me sento a escrever versos
+Ou, passeando pelos caminhos ou pelos atalhos,
+Escrevo versos num papel que está no meu pensamento,
+Sinto um cajado nas mãos
+E vejo um recorte de mim
+No cimo dum outeiro,
+Olhando para o meu rebanho e vendo as minhas ideias,
+Ou olhando para as minhas ideias e vendo o meu rebanho,
+E sorrindo vagamente como quem não compreende o que se diz
+E quer fingir que compreende.</div>
+  <div class="poem-note"><strong>Como ler:</strong> até a tristeza é “natural e justa”, como um pôr do sol. O incômodo nasce quando ele <em>sabe</em> que os pensamentos são contentes: a consciência (o pensar) estraga a sensação pura. Note também como o rebanho e as ideias se confundem no final.</div></div>
+
+  <h4>2. Valoriza as sensações: o Sensacionismo</h4>
+  <p>As sensações são registradas <strong>sem a interferência do pensamento</strong>. O mundo é aquilo que ele sente. Essa é a proposta do <strong>Sensacionismo</strong>: toda realidade só é aceita quando captada pela percepção. Para Caeiro, “a base da arte é a sensação”.</p>
+  <div class="grid2">
+  <div class="poem c" style="margin:0"><div class="pt"><b>II</b> · (trechos)</div>
+  <div class="v">Tenho o costume de andar pelas estradas
+Olhando para a direita e para a esquerda,
+E de vez em quando olhando para trás…
+E o que vejo a cada momento
+É aquilo que nunca antes eu tinha visto,
+E eu sei dar por isso muito bem…
+Sei ter o pasmo essencial
+Que tem uma criança se, ao nascer,
+Reparasse que nascera deveras…
+<mark>Sinto-me nascido a cada momento
+Para a eterna novidade do mundo…</mark>
+
+<mark>Creio no mundo como num malmequer,
+Porque o vejo. Mas não penso nele
+Porque pensar é não compreender…</mark>
+O mundo não se fez para pensarmos nele
+<mark>(Pensar é estar doente dos olhos)</mark>
+Mas para olharmos para ele e estarmos de acordo…
+
+<mark>Eu não tenho filosofia: tenho sentidos…</mark>
+Se falo na Natureza não é porque saiba o que ela é,
+Mas porque a amo, e amo-a por isso,
+Porque quem ama nunca sabe o que ama
+Nem sabe por que ama, nem o que é amar…
+
+<mark>Amar é a eterna inocência,
+E a única inocência é não pensar…</mark></div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>IX</b></div>
+  <div class="v"><mark>Sou um guardador de rebanhos.
+O rebanho é os meus pensamentos
+E os meus pensamentos são todos sensações.</mark>
+Penso com os olhos e com os ouvidos
+E com as mãos e os pés
+E com o nariz e a boca.
+
+Pensar uma flor é vê-la e cheirá-la
+E comer um fruto é saber-lhe o sentido.
+
+Por isso quando num dia de calor
+Me sinto triste de gozá-lo tanto,
+E me deito ao comprido na erva,
+E fecho os olhos quentes,
+<mark>Sinto todo o meu corpo deitado na realidade,
+Sei a verdade e sou feliz.</mark></div>
+  <div class="poem-note">O poema IX explica a metáfora do rebanho: <strong>rebanho = pensamentos = sensações</strong>. “Pensar” para Caeiro é usar os <strong>cinco sentidos</strong>.</div></div>
+  </div>
+  <div class="box warn" style="margin-top:14px"><div class="tag">⚠ Diferença no material</div><p>Na caixa da apostila, a ordem dos versos do poema II saiu trocada: “O meu olhar é nítido como um girassol” aparece no meio de “Que tem uma criança se, ao nascer, / Reparasse que nascera deveras”. Na versão original, <strong>“O meu olhar é nítido como um girassol”</strong> é o <strong>primeiro verso</strong> do poema II. Acima, organizei na ordem que faz sentido e mantive os trechos da apostila. O slide 6 da Aula 26 destaca os dois últimos versos, “Amar é a eterna inocência, / E a única inocência é não pensar”, sobre o desenho de uma ovelha e de um pastor feitos de palavras.</p></div>
+
+  <h4>3. Objetividade total: “tudo é como é”</h4>
+  <p>Caeiro quer ser totalmente <strong>objetivo</strong>, sem filosofia profunda: “tudo é como é”, “tudo é assim porque é assim”. Daí vem o gosto pela <strong>tautologia</strong>, dizer que uma coisa é ela mesma (“as árvores são árvores”, “os regatos são regatos”).</p>
+  <div class="poem c"><div class="pt"><b>VI</b></div>
+  <div class="v"><mark>Pensar em Deus é desobedecer a Deus,</mark>
+Porque Deus quis que o não conhecêssemos,
+Por isso se nos não mostrou…
+
+Sejamos simples e calmos,
+Como os regatos e as árvores,
+E Deus amar-nos-á fazendo de nós
+Belos como as árvores e os regatos,
+E dar-nos-á verdor na sua primavera,
+E um rio aonde ir ter quando acabemos!…
+E não nos dará mais nada, porque dar-nos mais seria tirar-nos mais.</div>
+  <div class="poem-note"><span class="comp-lead">Complemento:</span> a apostila registra este trecho como “E Deus amar-nos-á fazendo de nós / Nós como as árvores são árvores / E como os regatos são regatos”. A versão mais conhecida é “Belos como as árvores e os regatos”. As duas têm a mesma ideia: sermos <em>apenas o que somos</em>, como a natureza.</div></div>
+
+  <div class="box star"><div class="tag">★ “IMPORTANTE” da apostila: quatro ideias que caem muito</div>
+  <ol type="A">
+    <li><strong>Caeiro é o mestre de todos.</strong> Sua visão da realidade, da Natureza e da existência humana influencia os discípulos: Álvaro de Campos, Ricardo Reis e o próprio Pessoa ortônimo. Campos reconhece que sua <em>lucidez</em>, o jeito de ver a realidade objetivamente, vem do mestre Caeiro.</li>
+    <li><strong>O “rebanho” (textos I e IX)</strong> é a soma de suas sensações: o conhecimento da Natureza e do Mundo como resultado da soma dos sentidos. Ser feliz é: “Sinto todo o meu corpo deitado na realidade, / Sei a verdade e sou feliz”.</li>
+    <li><strong>O paganismo de Caeiro</strong> consiste em não aceitar um Deus espiritualizado e transcendental, como o do Cristianismo. Ele se identifica com um deus visível, real, presente nos elementos da natureza. É o <strong>panteísmo</strong>, a visão grega de que Deus se manifesta em tudo e em todos.</li>
+    <li><strong>A “antifilosofia” de Caeiro</strong> é, na verdade, “a sua filosofia”: não tentar compreender ou explicar as coisas, mas apenas <strong>senti-las</strong>.</li>
+  </ol></div>
+
+  <h4>4. Revolta contra a metafísica</h4>
+  <p>Em certos poemas há um tom de <strong>revolta e agressividade</strong> contra quem quer justificar o mundo com conceitos metafísicos e espiritualistas.</p>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div><p><strong>Metafísica</strong> é a parte da filosofia que estuda o que está “além do físico”: a essência das coisas, Deus, a alma, o sentido do universo. Caeiro é <strong>antimetafísico</strong>: para ele, só existe o que se vê.</p></div>
+  <div class="grid2">
+  <div class="poem c" style="margin:0"><div class="pt"><b>V</b> · (trechos)</div>
+  <div class="v"><mark>Há metafísica bastante em não pensar em nada.</mark>
+
+O que penso eu do mundo?
+Sei lá o que penso do mundo!
+Se eu adoecesse pensaria nisso.
+
+Que ideia tenho eu das cousas?
+Que opinião tenho sobre as causas e efeitos?
+Que eu tenho meditado sobre Deus e a alma
+E sobre a criação do Mundo?
+Não sei. Para mim pensar nisso é fechar os olhos
+E não pensar. É correr as cortinas
+<span class="cut">[…]</span>
+Metafísica? Que metafísica têm aquelas árvores?
+<mark>A de serem verdes e copadas e de terem ramos</mark>
+<span class="cut">[…]</span>
+“Constituição íntima das cousas”…
+“Sentido íntimo do Universo”…
+Tudo isto é falso, tudo isto não quer dizer nada.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>V</b> · (continuação)</div>
+  <div class="v"><mark>O único sentido íntimo das cousas
+É elas não terem sentido íntimo nenhum.</mark>
+
+Não acredito em Deus porque nunca o vi.
+Se ele quisesse que eu acreditasse nele,
+Sem dúvida que viria falar comigo
+E entraria pela minha porta dentro
+Dizendo-me, Aqui estou!
+<span class="cut">[…]</span>
+Mas se Deus é as flores e as árvores
+E os montes e sol e o luar,
+Então acredito nele,
+Então acredito nele a toda a hora,
+E a minha vida é toda uma oração e uma missa,
+E uma comunhão com os olhos e pelos ouvidos.
+
+Mas se Deus é as árvores e as flores
+E os montes e o luar e o sol,
+<mark>Para que lhe chamo eu Deus?</mark></div></div>
+  </div>
+  <div class="box ok" style="margin-top:14px"><div class="tag">🔍 Como interpretar o poema V</div>
+  <p>O raciocínio de Caeiro é quase uma demonstração lógica:</p>
+<pre class="dg">Premissa 1: só acredito no que vejo.        → “Não acredito em Deus porque nunca o vi.”
+Premissa 2: SE Deus = natureza visível,      → “então acredito nele a toda a hora”
+Conclusão:  mas então “Deus” é só um nome     → “Para que lhe chamo eu Deus?”
+            extra para as coisas.               (basta dizer árvores, flores, sol…)</pre>
+  <p>Isso é o <strong>panteísmo</strong> da letra C: o sagrado está nas coisas. E é <strong>antimetafísica</strong>: a única “metafísica” da árvore é ser verde e ter ramos.</p></div>
+
+  <h4>5. Antiespiritualismo: o Menino Jesus (poema VIII)</h4>
+  <p>Para Pessoa, o poema VIII é um exemplo de <strong>antiespiritualismo</strong>. O mestre vê todas as coisas como realmente são, inclusive Jesus Cristo, que aparece como uma simples criança. Ricardo Reis, que herda o paganismo do mestre, diz que Caeiro é “<strong>mais pagão que o paganismo</strong>”. A apostila frisa: <strong>Caeiro não é ateu</strong>.</p>
+  <details class="poem c"><summary>Ler os trechos do poema VIII (apostila)</summary>
+  <div class="v" style="margin-top:12px">Num meio-dia de fim de primavera
+Tive um sonho como uma fotografia.
+Vi Jesus Cristo descer à terra.
+Veio pela encosta de um monte
+<mark>Tornado outra vez menino,</mark>
+A correr e a rolar-se pela erva
+E a arrancar flores para as deitar fora
+E a rir de modo a ouvir-se de longe.
+<mark>Tinha fugido do céu.
+Era nosso demais para fingir
+De segunda pessoa da trindade.</mark>
+<span class="cut">[…]</span>
+E de vez em quando de se tornar outra vez homem
+E subir para a cruz, e estar sempre a morrer
+Com uma coroa toda à roda de espinhos
+<span class="cut">[…]</span>
+O seu pai era duas pessoas —
+Um velho chamado José, que era carpinteiro,
+E que não era pai dele;
+E o outro pai era uma pomba estúpida,
+A única pomba feia do mundo
+Porque não era do mundo nem era pomba.
+E a sua mãe não tinha amado antes de o ter.
+Não era mulher: era uma mala
+Em que ele tinha vindo do céu.
+E queriam que ele, que só nascera da mãe,
+E nunca tivera pai para amar com respeito,
+Pregasse a bondade e a justiça!
+<span class="cut">[…]</span>
+Hoje vive na minha aldeia comigo.
+É uma criança bonita de riso e natural.
+Limpa o nariz ao braço direito
+<span class="cut">[…]</span>
+<mark>A mim ensinou-me tudo.
+Ensinou-me a olhar para as coisas.</mark>
+Aponta-me todas as coisas que há nas flores.
+<span class="cut">[…]</span>
+Diz-me muito mal de Deus.
+Diz que ele é um velho estúpido e doente,
+Sempre a escarrar no chão
+E a dizer indecências.
+<span class="cut">[…]</span>
+Depois ele adormece e eu deito-o.
+Levo-o ao colo para dentro de casa
+E deito-o, despindo-o lentamente
+E como seguindo um ritual muito limpo
+E todo materno até ele estar nu.
+Ele dorme dentro da minha alma
+E às vezes acorda de noite
+E brinca com os meus sonhos.
+<span class="cut">[…]</span>
+Quando eu morrer, filhinho,
+Seja eu a criança, o mais pequeno.
+Pega-me tu ao colo
+E leva-me para dentro da tua casa.
+Despe o meu ser cansado e humano
+E deita-me na tua cama.
+E conta-me histórias, caso eu acorde,
+Para eu tornar a adormecer.
+E dá-me sonhos teus para eu brincar
+Até que nasça qualquer dia
+Que tu sabes qual é.
+<span class="cut">[…]</span>
+<mark>Esta é a história do meu Menino Jesus.
+Por que razão que se perceba
+Não há de ser ela mais verdadeira
+Que tudo quanto os filósofos pensam
+E tudo quanto as religiões ensinam?</mark></div>
+  <div class="poem-note"><strong>Chave de leitura:</strong> Caeiro <em>tira Cristo do céu</em> (o transcendente) e o traz para a terra (o concreto, o natural). O Menino Jesus vira uma criança comum, que brinca e “ensina a olhar para as coisas”. A crítica atinge as <strong>instituições e os dogmas religiosos</strong>, não a espiritualidade da natureza. O poema é propositalmente irreverente, e por isso é tão citado.</div></details>
+
+  <h4>6. Metalinguagem: a poesia “natural”</h4>
+  <p>Como é comum aos grandes poetas, Caeiro também reflete sobre o <strong>fazer poético</strong> (<strong>metalinguagem</strong>, a linguagem falando de si mesma). Mesmo aí ele continua “simples”: a poesia deve ser natural como a natureza.</p>
+  <div class="poem c"><div class="pt"><b>XIV</b></div>
+  <div class="v"><mark>Não me importo com as rimas. Raras vezes
+Há duas árvores iguais, uma ao lado da outra.</mark>
+Penso e escrevo como as flores têm cor
+Mas com menos perfeição no meu modo de exprimir-me
+Porque me falta a simplicidade divina
+De ser todo só o meu exterior.
+
+Olho-me e comovo-me,
+Comovo-me como a água corre quando o chão é inclinado,
+<mark>E a minha poesia é natural como o levantar-se vento…</mark></div>
+  <div class="poem-note"><strong>Raciocínio:</strong> rima = repetição de sons iguais. Na natureza quase não há duas árvores iguais lado a lado. Logo, uma poesia “natural” não precisa de rimas. Isso justifica o <strong>verso livre e branco</strong> de Caeiro.</div></div>
+
+  <h4>7. Objetividade absoluta: o rio da minha aldeia</h4>
+  <p>O rio da aldeia de Caeiro, pequeno e humilde, é mais independente e “maior” que o <strong>Tejo</strong>, rio cheio de lances históricos. O rio da aldeia não o faz pensar em nada. Só faz com que ele “sinta” estar à beira de um rio. Por isso é “mais valioso” para o poeta.</p>
+  <div class="poem c two"><div class="pt"><b>XX</b></div>
+  <div class="v"><mark>O Tejo é mais belo que o rio que corre pela minha aldeia,
+Mas o Tejo não é mais belo que o rio que corre pela minha aldeia
+Porque o Tejo não é o rio que corre pela minha aldeia.</mark>
+
+O Tejo tem grandes navios
+E navega nele ainda,
+Para aqueles que veem em tudo o que lá não está,
+A memória das naus.
+
+O Tejo desce de Espanha
+E o Tejo entra no mar em Portugal.
+Toda a gente sabe isso.
+Mas poucos sabem qual é o rio da minha aldeia
+E para onde ele vai
+E donde ele vem.
+E por isso, porque pertence a menos gente,
+É mais livre e maior o rio da minha aldeia.
+<span class="cut">[…]</span>
+Ninguém nunca pensou no que há para além
+Do rio da minha aldeia.
+<mark>O rio da minha aldeia não faz pensar em nada.
+Quem está ao pé dele está só ao pé dele.</mark></div>
+  <div class="poem-note"><strong>O paradoxo dos três primeiros versos:</strong> “O Tejo é mais belo” no sentido objetivo, estético. Mas “não é mais belo” para Caeiro, porque não é o rio dele. Ou seja, não há hierarquia entre as coisas reais: cada uma vale por existir.<br><strong>A crítica escondida:</strong> quem vê no Tejo “a memória das naus” está vendo “o que lá não está” (a história, os Descobrimentos). Caeiro recusa esse olhar histórico e simbólico. <span class="comp-lead">Complemento:</span> é o oposto exato do Pessoa de <em>Mensagem</em>, que vê no mar justamente a glória das navegações. Excelente comparação para prova.</div></div>
+
+  <div class="poem c"><div class="pt"><b>XI</b> · “Importante: a objetividade absoluta do poeta é confirmada neste outro poema”</div>
+  <div class="v">Aquela senhora tem um piano
+Que é agradável mas não é o correr dos rios
+Nem o murmúrio que as árvores fazem…
+
+<mark>Para que é preciso ter um piano?
+O melhor é ter ouvidos
+E amar a Natureza.</mark></div>
+  <div class="poem-note"><strong>Obs. da apostila:</strong> ao comparar o som de um piano (símbolo da <strong>civilização</strong>) com o de um rio que corre ou o murmúrio das árvores (símbolos da <strong>Natureza</strong>), o poeta ressalta a beleza dos elementos naturais, que simplesmente “existem”. <span class="muted">(A apostila tem um erro de digitação: “agradável <strong>Ma</strong> não é” deve ser “agradável <strong>mas</strong> não é”.)</span></div></div>
+
+  <h4>Mais Caeiro nos slides da Aula 26</h4>
+  <div class="grid2">
+  <div class="poem c" style="margin:0"><div class="pt"><b>Querem uma luz melhor que a do Sol!</b> · Poemas Inconjuntos</div>
+  <div class="v">AH! QUEREM uma luz melhor que a do Sol!
+Querem prados mais verdes do que estes!
+Querem flores mais belas do que estas que vejo!
+<mark>A mim este Sol, estes prados, estas flores contentam-me.</mark>
+Mas, se acaso me descontentam,
+<mark>O que quero é um sol mais sol que o Sol,</mark>
+O que quero é prados mais prados que estes prados,
+O que quero é flores mais estas flores que estas flores —
+Tudo mais ideal do que é do mesmo modo e da mesma maneira!</div>
+  <div class="poem-note">Crítica a quem busca um mundo <strong>ideal</strong>, “melhor” que o real (religião, idealismo platônico). Até quando está descontente, Caeiro não quer <em>outra</em> coisa: quer <strong>mais da mesma coisa</strong> (“um sol mais sol que o Sol”). O ideal dele é o próprio real, intensificado.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>Pouco a pouco</b> · Poemas Inconjuntos</div>
+  <div class="v">Pouco a pouco o campo se alarga e se doura.
+A manhã extravia-se pelos irregulares da planície.
+<mark>Sou alheio ao espetáculo que vejo: vejo-o,
+É exterior a mim. Nenhum sentimento me liga a ele.
+E é esse sentimento que me liga à manhã que aparece.</mark></div>
+  <div class="poem-note">Objetividade: o mundo é <strong>exterior</strong> ao eu, e o poeta não projeta emoções nele (ao contrário do romântico, que vê a própria tristeza na paisagem). O paradoxo final: o sentimento de <em>não</em> ter sentimento é o que o liga à manhã.</div></div>
+  </div>
+
+  <!-- PARTE B -->
+  <h3 id="caeiro-pastor">Parte B — <em>O Pastor Amoroso</em></h3>
+  <div class="card">
+    <ol>
+      <li>A maior parte dos poemas, <strong>seis dos oito</strong>, foi publicada muito depois da morte de Fernando Pessoa.</li>
+      <li>Caeiro, o poeta-pastor, se revela de maneira discreta um <strong>sonhador</strong>, ao contrário da postura anterior: é um <strong>devaneio amoroso</strong>.</li>
+      <li>É genial essa criação de Pessoa: ele mostra <strong>um momento de fraqueza do “mestre”</strong>, alguém que também pode se contradizer, como qualquer pessoa. E Caeiro <strong>tem consciência</strong> dessa fragilidade humana e real.</li>
+    </ol>
+  </div>
+  <div class="grid2">
+  <div class="poem c" style="margin:0"><div class="pt"><b>I</b> · O Pastor Amoroso</div>
+  <div class="v">Quando eu não te tinha
+Amava a Natureza como um monge calmo a Cristo…
+<mark>Agora amo a Natureza
+Como um monge calmo à Virgem Maria,</mark>
+Religiosamente, a meu modo, como dantes,
+Mas de outra maneira mais comovida e próxima.
+Vejo melhor os rios quando vou contigo
+Pelos campos até à beira dos rios;
+Sentado a teu lado reparando nas nuvens
+Reparo nelas melhor…
+Tu não me tiraste a Natureza…
+Tu não me mudaste a Natureza…
+<mark>Trouxeste-me a Natureza para ao pé de mim.</mark>
+Por tu existires vejo-a melhor, mas a mesma,
+Por tu me amares, amo-a do mesmo modo, mas mais,
+Por tu me escolheres para te ter e te amar,
+Os meus olhos fitaram-na mais demoradamente
+Sobre todas as cousas.
+Não me arrependo do que fui outrora
+Porque ainda o sou.
+Só me arrependo de outrora te não ter amado.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>VIII</b> · O Pastor Amoroso</div>
+  <div class="v"><mark>O pastor amoroso perdeu o cajado,</mark>
+E as ovelhas tresmalharam-se pela encosta,
+<mark>E, de tanto pensar, nem tocou a flauta que trouxe para tocar.</mark>
+<span class="cut">[…]</span>
+Ninguém o tinha amado, afinal.
+Quando se ergueu da encosta e da verdade falsa, viu tudo:
+Os grandes vales cheios dos mesmos vários verdes de sempre,
+As grandes montanhas longe, mais reais que qualquer sentimento,
+A realidade toda, com o céu e o ar e os campos que existem,
+E sentiu que de novo o ar lhe abria, mas com dor, uma liberdade no peito.</div>
+  <div class="poem-note">Pelo amor, o pastor <strong>passa a pensar</strong> (a doença de que fugia!). O rebanho, que são suas sensações, se espalha. Desiludido (“ninguém o tinha amado”), ele volta à realidade “mais real que qualquer sentimento”, mas agora <strong>com dor</strong>.</div></div>
+  </div>
+<pre class="dg">GUARDADOR DE REBANHOS          PASTOR AMOROSO
+ver sem pensar          ──►    amor faz pensar (“de tanto pensar…”)
+rebanho em ordem        ──►    “perdeu o cajado”, ovelhas “tresmalharam-se”
+natureza amada com calma ──►   natureza vista “melhor” ao lado da amada
+sossego                 ──►    desilusão e volta ao real, “com dor”</pre>
+
+  <!-- PARTE C -->
+  <h3 id="caeiro-inconjuntos">Parte C — <em>Poemas Inconjuntos</em></h3>
+  <div class="card">
+    <ol>
+      <li>São poemas de <strong>“aprofundamento”</strong> de Caeiro: intensificam os aspectos mais importantes de <em>O Guardador de Rebanhos</em>.</li>
+      <li>O seu <strong>“realismo”</strong> impressiona. Vejam os exemplos.</li>
+    </ol>
+    <p class="muted" style="margin:0"><span class="comp-lead">Complemento:</span> “inconjuntos” quer dizer “não reunidos num conjunto”, poemas avulsos. Em “À guisa de prefácio”, Pessoa diz que nos poemas finais há “a continuação do aprofundamento” e também “uma turbação da obra, pela doença final”.</p>
+  </div>
+
+  <div class="grid2">
+  <div class="poem c" style="margin:0"><div class="pt"><b>1</b> · Para além da curva da estrada</div>
+  <div class="v">Para além da curva da estrada
+Talvez haja um poço, e talvez um castelo,
+E talvez apenas a continuação da estrada.
+Não sei nem pergunto.
+Enquanto vou na estrada antes da curva
+Só olho para a estrada antes da curva,
+Porque não posso ver senão a estrada antes da curva.
+De nada me serviria estar olhando para outro lado
+E para aquilo que não vejo.
+<mark>Importemo-nos apenas com o lugar onde estamos.
+Há beleza bastante em estar aqui e não noutra parte qualquer.</mark>
+Se há alguém para além da curva da estrada,
+Esses que se preocupem com o que há para além da curva da estrada.
+Essa é que é a estrada para eles.
+Se nós tivermos que chegar lá, quando lá chegarmos saberemos.
+Por ora só sabemos que lá não estamos.
+Aqui há só a estrada antes da curva, e antes da curva
+Há a estrada sem curva nenhuma.</div>
+  <div class="poem-note">A “curva” é o <strong>futuro/desconhecido</strong>. Caeiro recusa a ansiedade com o que não se vê: só existe o aqui e agora percebido.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>2</b> · Não basta abrir a janela</div>
+  <div class="v">Não basta abrir a janela
+Para ver os campos e o rio.
+Não é bastante não ser cego
+Para ver as árvores e as flores.
+<mark>É preciso também não ter filosofia nenhuma.
+Com filosofia não há árvores: há ideias apenas.</mark>
+Há só cada um de nós, como uma cave.
+Há só uma janela fechada, e todo o mundo lá fora;
+E um sonho do que se poderia ver se a janela se abrisse,
+Que nunca é o que se vê quando se abre a janela.</div>
+  <div class="poem-note">A filosofia <strong>fecha a janela</strong>: troca as árvores por ideias de árvores. Quem vive de ideias fica trancado numa “cave” (porão), sonhando com um mundo que nunca é o real.</div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+  <div class="poem c" style="margin:0"><div class="pt"><b>3</b> · Vive, dizes, no presente</div>
+  <div class="v">Vive, dizes, no presente;
+Vive só no presente.
+<mark>Mas eu não quero o presente, quero a realidade;
+Quero as cousas que existem, não o tempo que as mede.</mark>
+<span class="cut">[…]</span>
+É esta a ciência de ver, que não é nenhuma.</div>
+  <div class="poem-note"><strong>Muito importante:</strong> Caeiro <strong>não</strong> é o poeta do <em>carpe diem</em>. “Presente” ainda é uma ideia de <em>tempo</em>, uma abstração. Ele quer <strong>as coisas</strong>, não o tempo que as mede. (Quem vive o presente como filosofia é Ricardo Reis. Guarde essa diferença.) Repare no “dizes”: o conselho vem de <em>outra voz</em>, e Caeiro o recusa.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>4</b> · Se, depois de eu morrer…</div>
+  <div class="v">Se, depois de eu morrer, quiserem escrever a minha biografia,
+Não há nada mais simples.
+<mark>Tem só duas datas — a da minha nascença e a da minha morte.
+Entre uma e outra cousa todos os dias são meus.</mark>
+<span class="cut">[…]</span>
+Um dia deu-me o sono como a qualquer criança.
+Fechei os olhos e dormi.
+Além disso, fui o único poeta da Natureza.</div>
+  <div class="poem-note">Uma vida sem “acontecimentos”, feita só de dias vividos. A morte é vista com naturalidade: é só “sono”, como o de uma criança.</div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+  <div class="poem c" style="margin:0"><div class="pt"><b>5</b> · Ponham na minha sepultura</div>
+  <div class="v">Ponham na minha sepultura
+<mark>Aqui jaz, sem cruz,
+Alberto Caeiro</mark>
+Que foi buscar os deuses…
+Se os deuses vivem ou não isso é convosco.
+A mim deixei que me recebessem.</div>
+  <div class="poem-note">“Sem cruz” = sem símbolo cristão. É o <strong>paganismo</strong> até na morte.</div></div>
+  <div class="poem c" style="margin:0"><div class="pt"><b>6</b> · (ditado pelo poeta no dia de sua morte)</div>
+  <div class="v">É talvez o último dia da minha vida.
+Saudei o sol, levantando a mão direita,
+<mark>Mas não o saudei, dizendo-lhe adeus.
+Fiz sinal de gostar de o ver ainda, mais nada.</mark></div>
+  <div class="poem-note">Até diante da morte, nada de drama nem metafísica: só o gesto simples de gostar de ver o sol. É a coerência final do mestre. <span class="muted">(Lembre que a indicação “ditado no dia de sua morte” também é ficção de Pessoa: Caeiro nunca existiu.)</span></div></div>
+  </div>
+
+  <h3>Notas especiais sobre Caeiro (apostila)</h3>
+  <div class="grid3">
+    <div class="card"><h4 style="margin-top:0">1. Um “pai”</h4><p>Caeiro foi realmente um mestre para Pessoa, quase um <strong>pai</strong> com quem havia muito a aprender. Na “biografia” de Caeiro há fatos comuns ao verdadeiro pai de Pessoa, que <strong>morreu jovem e tuberculoso</strong>.</p></div>
+    <div class="card"><h4 style="margin-top:0">2. O ponto de equilíbrio</h4><p>A <strong>lucidez</strong> de Caeiro é um contraponto aos outros. Segundo a leitura da apostila, todos os demais manifestam sofrimento psíquico: Reis, “depressão”; Campos, “histérico e depressivo”; o ortônimo, “histeria, melancolia profunda e angústia” em torno do verdadeiro “eu”. Caeiro é o <strong>equilíbrio</strong> de todos.</p></div>
+    <div class="card"><h4 style="margin-top:0">3. A linguagem</h4><p>Comparado aos “outros poetas”, Caeiro tem <strong>vocabulário simples</strong>, parecido com a linguagem oral, sem recursos poéticos como linguagem figurada, metrificação e rima.</p></div>
+  </div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão (aprofundamento de nível vestibular)</div>
+  <p><strong>O grande paradoxo de Caeiro:</strong> ele diz que não pensa e não tem filosofia, mas seus poemas são <em>argumentos filosóficos</em>, cheios de raciocínio (“se… então…”). Também diz não usar linguagem figurada, mas usa comparações (“O meu olhar é nítido como um girassol”, “Pensar incomoda como andar à chuva”). A letra D da apostila já aponta isso: a “antifilosofia” é uma filosofia. Questões de nível alto adoram esse paradoxo.</p>
+  <p>Sobre a nota 2: descrições como “depressão” e “histeria” para os heterônimos são uma <strong>leitura interpretativa</strong> da apostila, ligada ao modo como o próprio Pessoa falou de si na carta. Não são diagnósticos. Em prova, prefira termos literários: Reis = contenção, resignação; Campos = angústia, tédio, niilismo; ortônimo = dor de pensar, fragmentação do eu.</p></div>
+</section>
+
+<!-- 5. REIS -->
+<section class="block" id="reis">
+  <div class="sec-head"><span class="sec-num">05</span><h2>Ricardo Reis: o clássico que pensa com a razão</h2></div>
+  <div class="banner r"><div class="mono-ic">RR</div><div><h3>Ricardo Reis (1887–?)</h3><p>Nasceu em 19 de setembro de 1887, no Porto. Formação erudita: colégio de padres <strong>jesuítas</strong> e profundo conhecimento da cultura clássica (grego, latim, mitologia, filosofia). Formou-se em <strong>Medicina</strong>. Monarquista, exilou-se no Brasil por discordar da República em Portugal.</p></div></div>
+
+  <div class="box ok"><div class="tag">🔑 A ideia central em uma linha</div>
+  <p>A vida é breve e o destino é inevitável. Então o sábio <strong>aproveita o momento com moderação</strong>, sem paixões e sem sofrer, e aceita a morte com serenidade. É a razão controlando a emoção.</p></div>
+
+  <h3>Aspectos do poeta clássico (apostila)</h3>
+  <h4>1. As <em>Odes</em>: a busca da perfeição</h4>
+  <p>Reis escreveu as <em>Odes de Ricardo Reis</em>. Por influência clássica, busca a perfeição e produz uma poesia de <strong>versos perfeitos, ritmo e musicalidade</strong>: o <strong>Belo</strong>.</p>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: como reconhecer um poema de Reis pela forma</div>
+  <ul>
+    <li><strong>Ode</strong>: poema lírico de tom elevado, de origem grega, cultivado em Roma pelo poeta <strong>Horácio</strong>, o grande modelo de Reis.</li>
+    <li>Estrofes regulares, versos geralmente <strong>sem rima</strong> e de metro controlado (muitas vezes alternando versos longos e curtos).</li>
+    <li><strong>Hipérbatos</strong> (inversão da ordem direta da frase), à maneira do latim: “Que horas que te não tornem / Da estatura da sombra…”.</li>
+    <li><strong>Vocabulário erudito e latinismos</strong> (óbolo, Átropos, Minos, Fado).</li>
+    <li>Muitos <strong>imperativos</strong> de conselho: “Colhe”, “Senta-te”, “Abdica”, “Vem sentar-te”. É uma poesia que ensina a viver.</li>
+    <li>Presença de <strong>deuses gregos e romanos</strong> e de musas: Lídia, Neera, Cloe.</li>
+  </ul></div>
+
+  <h4>2. As duas filosofias por trás das odes</h4>
+  <div class="grid2">
+    <div class="card" style="border-top:4px solid var(--reis)"><h4 style="margin-top:0">Estoicismo</h4><p>Doutrina fundada por <strong>Zenão de Cício</strong>. É uma ética em que a <strong>imperturbabilidade</strong>, a <strong>extirpação das paixões</strong> e a <strong>aceitação resignada do destino</strong> são marcas do homem sábio, o único apto a ser feliz.</p><p class="muted" style="margin:0">Em Reis: “Abdica / E sê rei de ti próprio”; aceitar o Fado; “sem desassossegos grandes”.</p></div>
+    <div class="card" style="border-top:4px solid var(--reis)"><h4 style="margin-top:0">Epicurismo</h4><p>Doutrina do filósofo grego <strong>Epicuro</strong>. Tem uma concepção <strong>materialista</strong> da natureza, busca a <strong>indiferença diante da morte</strong> e identifica o bem com os <strong>prazeres comedidos e espirituais</strong>. Esses prazeres, por passarem pelo crivo da reflexão, seriam imunes ao sofrimento, incluindo o das paixões.</p><p class="muted" style="margin:0">Em Reis: colher as flores do momento, mas sem excesso (<em>carpe diem</em> moderado).</p></div>
+  </div>
+<pre class="dg">              <span class="r">ESTOICISMO</span>                         <span class="r">EPICURISMO</span>
+     aceitar o destino (Fado)           buscar prazeres simples e moderados
+     dominar as paixões                 evitar a dor (inclusive a das paixões)
+     imperturbabilidade                 indiferença diante da morte
+                 ╲                         ╱
+                  ╲                       ╱
+                   ▼                     ▼
+          <span class="r">RICARDO REIS</span>: “goza o momento, mas com calma;
+          não te prendas a nada, pois tudo passa e a morte vem”</pre>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p><strong><em>Carpe diem</em></strong> (“colhe o dia”) é uma expressão de Horácio. O slide 3 da Aula 26 traz “Carpe Diem” em destaque, com a assinatura de Reis, sobre um fundo com palavras como <em>Lídia, Deuses, Tempo, Fado, Verdade</em>. É um bom resumo visual do universo dele. Outro conceito útil é a <strong>ataraxia</strong> (do grego, “ausência de perturbação”), a tranquilidade da alma que Reis busca.</p>
+  <p>No fundo do mesmo slide dá para ler parte de uma ode famosa de Reis (a leitura é parcial, porque o texto está como marca-d’água):</p>
+  <div class="poem r" style="margin-bottom:0"><div class="pt"><b>Para ser grande, sê inteiro</b> · Ricardo Reis</div>
+  <div class="v"><mark>Para ser grande, sê inteiro: nada
+Teu exagera ou exclui.</mark>
+Sê todo em cada coisa. Põe quanto és
+No mínimo que fazes.
+Assim em cada lago a lua toda
+Brilha, porque alta vive.</div>
+  <div class="poem-note">Ser inteiro em cada ação, mesmo na menor. A imagem final: a lua, por estar no alto, se reflete <em>inteira</em> em cada lago, pequeno ou grande.</div></div></div>
+
+  <h4>3. O paganismo</h4>
+  <p>Reis valoriza a <strong>cultura clássica</strong> e recebe a influência do mestre Caeiro. Mas o paganismo dos dois é diferente. O de Caeiro é natural e “ingênuo”. O de Reis é <strong>erudito</strong>, de quem conhece os deuses pelos livros.</p>
+
+  <h3>Os textos da apostila</h3>
+  <div class="poem r two"><div class="pt"><b>I</b> · Ode</div>
+  <div class="v"><mark>Não tenhas nada nas mãos
+Nem uma memória na alma,</mark>
+Que quando te puserem
+Nas mãos o óbolo último,
+Ao abrirem-te as mãos
+Nada te cairá.
+
+Que trono te querem dar
+Que Átropos to não tire?
+Que louros que não fanem
+Nos arbítrios de Minos?
+Que horas que te não tornem
+Da estatura da sombra
+Que serás quando fores
+Na noite e ao fim da estrada.
+
+<mark>Colhe as flores mas larga-as,
+Das mãos mal as olhaste.
+Senta-te ao sol. Abdica
+E sê rei de ti próprio.</mark></div>
+  <div class="poem-note">
+  <strong>Vocabulário (apostila + complemento):</strong><br>
+  • <strong>Óbolo</strong>: a apostila traduz como “esmola”. <span class="comp-lead">Complemento:</span> neste poema, o “óbolo último” é a <strong>moeda que os gregos colocavam com o morto para pagar Caronte</strong>, o barqueiro que levava as almas ao mundo dos mortos. É a mesma ideia do “óbolo ao barqueiro sombrio” da ode a Lídia.<br>
+  • <strong>Átropos</strong>: uma das três deusas (as Moiras) que cortavam o fio da vida.<br>
+  • <strong>Fanem</strong>: murchem.<br>
+  • <span class="comp-lead">Complemento:</span> <strong>Minos</strong> é o rei lendário de Creta que, depois de morto, virou um dos <strong>juízes dos mortos</strong>.<br><br>
+  <strong>Raciocínio da ode:</strong> não se apegue a nada (bens, memórias, glória), porque na morte tudo é tirado (Átropos corta o fio; os louros murcham diante de Minos). A saída é <strong>desapegar-se</strong>: colher as flores mas soltá-las logo, ficar ao sol e <strong>abdicar</strong>, ou seja, renunciar às ambições. Assim você é “rei de ti próprio”. Isso é <strong>estoicismo</strong> puro, com um toque de epicurismo (o prazer simples do sol).</div></div>
+
+  <div class="grid2">
+  <div class="poem r" style="margin:0"><div class="pt"><b>II</b> · Ode (trechos)</div>
+  <div class="v">A palidez do dia é levemente dourada.
+O sol de inverno faz luzir como orvalho as curvas
+Dos troncos de ramos secos.
+O frio leve treme.
+
+<mark>Desterrado da pátria antiquíssima da minha
+Crença, consolado só por pensar nos deuses,</mark>
+Aqueço-me trêmulo
+A outro sol do que este.
+
+O sol que havia sobre o Parténon e a Acrópole,
+O que alumiava os passos lentos e graves
+De Aristóteles falando.
+<mark>Mas Epicuro melhor
+Me fala, com a sua cariciosa voz terrestre</mark>
+Tendo para os deuses uma atitude também de deus,
+Sereno e vendo a vida
+À distância a que está.</div>
+  <div class="poem-note">Reis se sente <strong>exilado</strong> da “pátria antiquíssima” da sua crença, a Grécia pagã. Entre Aristóteles e Epicuro, escolhe <strong>Epicuro</strong>: a serenidade de olhar a vida “à distância”.</div></div>
+  <div class="poem r" style="margin:0"><div class="pt"><b>III</b> · Ode</div>
+  <div class="v">Tirem-me os deuses
+Em seu arbítrio
+Superior e urdido às escondidas
+O amor, glória e riqueza.
+Tirem, mas deixem-me,
+Deixem-me apenas
+<mark>A consciência lúcida e solene
+Das coisas e dos seres.</mark>
+
+Pouco importa
+Amor ou glória,
+<mark>A riqueza é um metal, a glória é um eco
+E o amor uma sombra.</mark>
+Mas a concisa
+Atenção dada
+Às formas e às maneiras dos objetos
+Tem abrigo seguro.
+Seus fundamentos
+São todo o mundo,
+Seu amor é o plácido Universo,
+Sua riqueza a vida.
+
+A sua glória
+É a suprema
+Certeza da solene e clara posse
+Das formas dos objetos.
+O resto passa,
+E teme a morte.
+Só nada teme ou sofre a visão clara
+E inútil do Universo.
+Essa a si basta,
+Nada deseja
+Salvo o orgulho de ver sempre claro
+Até deixar de ver.</div>
+  <div class="poem-note">Aqui aparece a herança de <strong>Caeiro</strong> (a atenção às “formas dos objetos”, ver claro). Mas em Reis ela vira <strong>consciência lúcida</strong>, um ato racional. Amor, glória e riqueza são ilusões passageiras (“metal”, “eco”, “sombra”).</div></div>
+  </div>
+  <div class="box mat"><div class="tag">Importante (apostila)</div><p>Observe a forte presença, nos textos II e III, do <strong>epicurismo</strong> e do <strong>estoicismo</strong>.</p></div>
+  <div class="box warn"><div class="tag">⚠ Pequena diferença</div><p>Na apostila, o texto III traz “Só nada <strong>treme</strong> ou sofre a visão clara”. A forma mais conhecida é “Só nada <strong>teme</strong> ou sofre”. Usei “teme”, que dialoga com o verso anterior (“E teme a morte”).</p></div>
+
+  <h4>4. Lídia e as musas: a herança de Horácio (e o paralelo com o Arcadismo)</h4>
+  <p>No poema a seguir aparece a presença feminina: <strong>Lídia</strong>, que, junto com <strong>Neera</strong> e <strong>Cloe</strong>, mostra a influência do poeta clássico <strong>Horácio</strong>, que tinha as mesmas musas. A apostila compara esse comportamento ao dos <strong>poetas árcades</strong> brasileiros, como <strong>Tomás Antônio Gonzaga</strong> e <strong>Cláudio Manuel da Costa</strong>.</p>
+  <div class="poem r two"><div class="pt"><b>Vem sentar-te comigo, Lídia, à beira do rio</b></div>
+  <div class="v"><mark>Vem sentar-te comigo, Lídia, à beira do rio.</mark>
+Sossegadamente fitemos o seu curso e aprendamos
+<mark>Que a vida passa, e não estamos de mãos enlaçadas.</mark>
+(Enlacemos as mãos.)
+
+Depois pensemos, crianças adultas, que a vida
+Passa e não fica, nada deixa e nunca regressa,
+Vai para um mar muito longe, para ao pé do Fado,
+Mais longe que os deuses.
+
+Desenlacemos as mãos, porque não vale a pena cansarmo-nos.
+<mark>Quer gozemos, quer não gozemos, passamos como o rio.</mark>
+Mais vale saber passar silenciosamente
+E sem desassossegos grandes.
+
+Sem amores, nem ódios, nem paixões que levantam a voz,
+Nem invejas que dão movimento demais aos olhos,
+Nem cuidados, porque se os tivesse o rio sempre correria,
+E sempre iria ter ao mar.
+
+<mark>Amemo-nos tranquilamente, pensando que podíamos,
+Se quiséssemos, trocar beijos e abraços e carícias,
+Mas que mais vale estarmos sentados ao pé um do outro
+Ouvindo correr o rio e vendo-o.</mark>
+
+Colhamos flores, pega tu nelas e deixa-as
+No colo, e que o seu perfume suavize o momento —
+Este momento em que sossegadamente não cremos em nada,
+Pagãos inocentes da decadência.
+
+Ao menos, se for sombra antes, lembrar-te-ás de mim depois
+Sem que a minha lembrança te arda ou te fira ou te mova,
+Porque nunca enlaçamos as mãos, nem nos beijamos
+Nem fomos mais do que crianças.
+
+E se antes do que eu levares o óbolo ao barqueiro sombrio,
+Eu nada terei que sofrer ao lembrar-me de ti.
+Ser-me-ás suave à memória lembrando-te assim — à beira-rio,
+Pagã triste e com flores no regaço.</div></div>
+  <div class="box ok"><div class="tag">🔍 Como interpretar a ode a Lídia</div>
+<pre class="dg">IMAGEM:     o <b>rio</b>  =  a vida que passa e “nunca regressa”
+            o <b>mar</b>  =  a morte / o Fado, “mais longe que os deuses”
+ATITUDE:    enlaçar as mãos → <b>desenlaçar</b> (“não vale a pena cansarmo-nos”)
+AMOR:       possível, mas <b>contido</b>: “podíamos… mas mais vale estarmos sentados”
+OBJETIVO:   se um morrer antes, o outro <b>não sofrerá</b> ao lembrar
+            → amor sem paixão = amor sem dor futura</pre>
+  <p>É a ode que mais cai sobre Reis. Ela junta <strong>tudo</strong>: a consciência da passagem do tempo, o <em>carpe diem</em> <strong>moderado</strong> (epicurismo), a recusa das paixões e a aceitação do Fado (estoicismo), a presença de Lídia (Horácio) e a mitologia (o óbolo, o barqueiro sombrio, Caronte).</p></div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: o paralelo com o Arcadismo</div>
+  <p>A apostila compara Reis aos árcades brasileiros. O que os aproxima: a <strong>inspiração greco-latina</strong>, o cenário campestre idealizado, a pastora ou musa com nome clássico (a Marília de Gonzaga, a Lídia de Reis), a <strong>vida simples</strong> e o <strong>carpe diem</strong>. A diferença: o árcade costuma falar de amor sentimental, enquanto Reis propõe um amor <strong>propositalmente sem paixão</strong>, por medo da dor.</p></div>
+
+  <h3>Mais Reis nos slides da Aula 26</h3>
+  <div class="grid2">
+  <div class="poem r" style="margin:0"><div class="pt"><b>Não a Ti, Cristo</b> · Ricardo Reis</div>
+  <div class="v">Não a Ti, Cristo, odeio ou te não quero.
+<mark>Em ti como nos outros creio deuses mais velhos.</mark>
+Só te tenho por não mais nem menos
+Do que eles, mas mais novo apenas.</div>
+  <div class="poem-note"><strong>Paganismo politeísta:</strong> Reis não odeia Cristo, mas o coloca como <em>mais um deus</em>, “mais novo” que os deuses antigos. <strong>Compare com Caeiro (VIII):</strong> Caeiro transforma Cristo num menino natural; Reis o encaixa num panteão de muitos deuses. Os dois são pagãos, de modos diferentes.</div></div>
+  <div class="poem r" style="margin:0"><div class="pt"><b>Nunca a alheia vontade</b> · Ricardo Reis</div>
+  <div class="v"><mark>Nunca a alheia vontade, inda que grata,
+Cumpras por própria.</mark>
+Manda no que fazes,
+Nem de ti mesmo servo.
+<mark>Ninguém te dá quem és.</mark>
+Nada te mude.
+Teu íntimo destino involuntário
+Cumpre alto.
+<mark>Sê teu filho.</mark></div>
+  <div class="poem-note"><strong>A ligação com a Aula 23:</strong> esta ode é um elogio da <strong>autonomia</strong> e uma recusa da <strong>heteronomia</strong>. “Nunca a alheia vontade… cumpras por própria” é literalmente “não obedeça à vontade de outro como se fosse sua”. Existe uma ironia fina aqui: quem aconselha a nunca obedecer à vontade alheia é um poeta que nasceu da vontade de outro, Pessoa. “Sê teu filho” = gera-te a ti mesmo, não deixes que outros te definam.</div></div>
+  </div>
+</section>
+
+<!-- 6. CAMPOS -->
+<section class="block" id="campos">
+  <div class="sec-head"><span class="sec-num">06</span><h2>Álvaro de Campos: o moderno que pensa com a emoção</h2></div>
+  <div class="banner a"><div class="mono-ic">AC</div><div><h3>Álvaro de Campos (1890–?)</h3><p>Nasceu no extremo sul de Portugal, em <strong>Tavira</strong>, em 15 de outubro de 1890. Estudou <strong>Engenharia Naval</strong> na Escócia, mas não exerceu a profissão: seria insuportável submeter-se às quatro paredes de um escritório. É o heterônimo “mais histericamente histérico” de Pessoa.</p></div></div>
+
+  <div class="box ok"><div class="tag">🔑 A ideia central em uma linha</div>
+  <p>Campos quer <strong>“sentir tudo de todas as maneiras”</strong>. Começa entediado (ópio), explode em euforia com as máquinas (futurismo) e termina esgotado, angustiado, dizendo <strong>“NÃO”</strong>. É a emoção levada ao extremo, nos dois sentidos.</p></div>
+  <p class="muted" style="font-size:.92rem"><span class="comp-lead">Complemento:</span> a expressão “Sentir tudo de todas as maneiras” é de um poema de Campos, “Passagem das Horas”. Resume bem o Sensacionismo intenso dele.</p>
+
+  <h3>Aspectos relevantes da obra</h3>
+  <div class="grid2">
+    <div class="card"><h4 style="margin-top:0">1. O poeta da Modernidade</h4><p>Velocidade, máquinas, indústrias: uma <strong>apologia ao Progresso</strong>.</p></div>
+    <div class="card"><h4 style="margin-top:0">2. O poeta do Futurismo</h4><p>Grande parte de seus versos são <strong>livres e brancos</strong> (sem metro fixo e sem rima).</p></div>
+  </div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div>
+  <p><strong>Futurismo</strong>: vanguarda europeia lançada pelo italiano <strong>Marinetti</strong> (manifesto de 1909). Exalta a velocidade, a máquina, a cidade, a guerra e a ruptura com o passado. <strong>Verso livre</strong> é o verso sem métrica regular. <strong>Verso branco</strong> é o verso sem rima.</p></div>
+
+  <h4>A <em>Ode Triunfal</em> (exemplo da apostila)</h4>
+  <div class="poem a"><div class="pt"><b>Ode Triunfal</b> · trechos selecionados <span class="muted">(o texto integral está na apostila)</span></div>
+  <div class="v">À dolorosa luz das grandes lâmpadas elétricas da fábrica
+Tenho febre e escrevo.
+Escrevo rangendo os dentes, fera para a beleza disto,
+Para a beleza disto totalmente desconhecida dos antigos.
+
+<mark>Ó rodas, ó engrenagens, r-r-r-r-r-r eterno!</mark>
+Forte espasmo retido dos maquinismos em fúria!
+Em fúria fora e dentro de mim,
+Por todos os meus nervos dissecados fora,
+Por todas as papilas fora de tudo com que eu sinto!
+<span class="cut">[…]</span>
+Canto, e canto o presente, e também o passado e o futuro,
+Porque o presente é todo o passado e todo o futuro
+E há Platão e Virgílio dentro das máquinas e das luzes elétricas
+<span class="cut">[…]</span>
+<mark>Ah, poder exprimir-me todo como um motor se exprime!
+Ser completo como uma máquina!</mark>
+Poder ir na vida triunfante como um automóvel último-modelo!
+<span class="cut">[…]</span>
+Ó fábricas, ó laboratórios, ó music-halls, ó Luna-Parks,
+Ó couraçados, ó pontes, ó docas flutuantes —
+<span class="cut">[…]</span>
+(Na nora do quintal da minha casa
+O burro anda à roda, anda à roda,
+E o mistério do mundo é do tamanho disto.
+<span class="cut">[…]</span>
+Pinheirais onde a minha infância era outra coisa
+Do que eu sou hoje…)
+<span class="cut">[…]</span>
+Eia! eia! eia!
+Eia eletricidade, nervos doentes da Matéria!
+<span class="cut">[…]</span>
+Hup-lá, hup-lá, hup-lá-hô, hup-lá!
+Hé-lá! He-hô! Ho-o-o-o-o!
+<mark>Z-z-z-z-z-z-z-z-z-z-z-z!</mark>
+
+<mark>Ah não ser eu toda a gente e toda a parte!</mark></div></div>
+
+  <div class="tw"><table>
+    <thead><tr><th>Recurso</th><th>Exemplo na <em>Ode Triunfal</em></th><th>Efeito</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Onomatopeia</strong></td><td>“r-r-r-r-r-r eterno!”, “Z-z-z-z-z!”</td><td>Imita o barulho das máquinas</td></tr>
+      <tr><td><strong>Interjeições</strong></td><td>“Eia!”, “Hé-lá!”, “Hup-lá!”, “Hilla!”</td><td>Euforia, grito, energia</td></tr>
+      <tr><td><strong>Apóstrofe</strong> (chamar alguém ou algo)</td><td>“Ó rodas, ó engrenagens”, “ó máquinas!”</td><td>A máquina vira divindade: “Nova Revelação metálica e dinâmica de Deus!”</td></tr>
+      <tr><td><strong>Enumeração caótica</strong></td><td>“Ó fábricas, ó laboratórios, ó music-halls, ó Luna-Parks, / Ó couraçados, ó pontes…”</td><td>Excesso, simultaneidade da vida moderna</td></tr>
+      <tr><td><strong>Estrangeirismos</strong></td><td>“Canadian-Pacific”, “Piccadillies”, “la foule”</td><td>Cosmopolitismo</td></tr>
+      <tr><td><strong>Verso livre e branco, longo</strong></td><td>Todo o poema</td><td>Ritmo de fluxo, de motor, sem freio</td></tr>
+      <tr><td><strong>Sensações corporais extremas</strong></td><td>“Tenho febre”, “Masoquismo através de maquinismos!”</td><td>Sensacionismo levado ao limite, até à dor</td></tr>
+      <tr><td><strong>Parêntese de memória</strong></td><td>“(Na nora do quintal da minha casa…)”</td><td>A infância e a melancolia rompem a euforia: é a semente da 3ª fase</td></tr>
+    </tbody></table></div>
+  <div class="box warn"><div class="tag">⚠ Nota sobre o texto integral</div><p>A <em>Ode Triunfal</em> completa, reproduzida na apostila, tem passagens propositalmente chocantes (sexualidade, violência, escândalo), feitas para provocar a moral burguesa. Aqui ficaram só os trechos que mostram as características cobradas. Para a prova, o que importa é reconhecer a <strong>exaltação da máquina</strong>, o <strong>excesso sensorial</strong> e os <strong>recursos formais</strong> da tabela.</p></div>
+
+  <h3 id="campos-fases">As três fases de Campos</h3>
+  <p>Diante de uma produção “vertiginosa”, a apostila aponta três fases:</p>
+<pre class="dg"> <span class="a">1ª DECADENTISTA</span>           <span class="a">2ª FUTURISTA</span>                <span class="a">3ª PESSOAL / INTIMISTA</span>
+ (do Opiário)              (sensacionista)             (autobiográfica)
+ tédio, ópio, Oriente  ──► máquinas, euforia,     ──► angústia, cansaço,
+ formas regulares          verso livre, excesso        o poeta do “NÃO”
+ “Opiário”                 “Ode Triunfal”              “Lisbon Revisited”, “Tabacaria”
+       ▲                                                       │
+       └──────── o tédio do começo volta, agora sem saída ─────┘</pre>
+
+  <h4>1ª fase: decadentista ou “do Opiário”</h4>
+  <p>É a fase em que o poeta teria ido ao <strong>Oriente</strong>. É marcada pelo sentimento <strong>decadentista do Simbolismo</strong>: degradação de valores e de relações sociais contrária ao cientificismo da época, espírito derrotista e niilista. Entediado, achando que nada vale a pena, o poeta se ressente do não reconhecimento do mundo e, por outro lado, não aceita o mundo. A saída é buscar um <strong>“Oriente” que não existe</strong>, mas que ganha realidade sob a influência do <strong>ópio e do álcool</strong>.</p>
+  <div class="poem a two"><div class="pt"><b>Opiário</b> · “Ao Senhor Mário de Sá-Carneiro” (trechos)</div>
+  <div class="v"><mark>É antes do ópio que a minh'alma é doente.</mark>
+Sentir a vida convalesce e estiola
+E eu vou buscar ao ópio que consola
+<mark>Um Oriente ao oriente do Oriente.</mark>
+
+Esta vida de bordo há de matar-me.
+São dias só de febre na cabeça
+E, por mais que procure até que adoeça,
+Já não encontro a mola pra adaptar-me.
+<span class="cut">[…]</span>
+Eu acho que não vale a pena ter
+Ido ao Oriente e visto a Índia e a China.
+A terra é semelhante e pequenina
+E há só uma maneira de viver.
+
+Por isso eu tomo ópio. É um remédio.
+Sou um convalescente do Momento.
+Moro no rés-do-chão do pensamento
+<mark>E ver passar a Vida faz-me tédio.</mark>
+<span class="cut">[…]</span>
+<mark>Pertenço a um gênero de portugueses
+Que depois de estar a Índia descoberta
+Ficaram sem trabalho.</mark> A morte é certa.
+Tenho pensado nisto muitas vezes.
+<span class="cut">[…]</span>
+Não tenho personalidade alguma.
+<span class="cut">[…]</span>
+A minha Pátria é onde não estou.
+<span class="cut">[…]</span>
+Se ao menos eu por fora fosse tão
+Interessante como sou por dentro!
+<span class="cut">[…]</span>
+E afinal o que quero é fé, é calma,
+E não ter estas sensações confusas.
+Deus que acabe com isto! Abra as eclusas —
+E basta de comédias na minh'alma!
+
+(No Canal de Suez, a bordo)</div></div>
+  <div class="box ok"><div class="tag">🔍 Como ler o “Opiário”</div>
+  <ul>
+    <li><strong>A doença vem antes da droga:</strong> “É antes do ópio que a minh'alma é doente.” O ópio não causa o mal-estar. É uma fuga dele.</li>
+    <li><strong>O Oriente impossível:</strong> “um Oriente ao oriente do Oriente” é um lugar que sempre foge. O Oriente real decepciona (“não vale a pena… A terra é semelhante e pequenina”).</li>
+    <li><strong>A crítica a Portugal:</strong> “Pertenço a um gênero de portugueses / Que depois de estar a Índia descoberta / Ficaram sem trabalho” é uma ironia amarga sobre um país que viveu da glória dos Descobrimentos e agora não tem mais o que conquistar. <span class="comp-lead">Complemento:</span> compare com <em>Mensagem</em>, que também fala do Portugal decadente, mas com esperança (o Quinto Império). Campos vê só o vazio.</li>
+    <li><strong>Forma ainda tradicional:</strong> <span class="comp-lead">Complemento:</span> o “Opiário” é escrito em quadras com rima (esquema ABBA), bem diferente do verso livre das fases seguintes. Pessoa o datou de março de 1914, como se fosse anterior ao encontro de Campos com o mestre Caeiro.</li>
+  </ul></div>
+
+  <h4>2ª fase: futurista (sensacionista)</h4>
+  <p>É uma <strong>reação ao decadentismo simbolista</strong>. O poeta agora faz a apologia do movimento, da força bruta, da energia explosiva, da urbanidade e da vida do homem moderno que é “engolido” pela máquina.</p>
+  <div class="box mat"><div class="tag">Observação da apostila</div><p>Nesta fase é importante a influência do poeta americano <strong>Walt Whitman</strong> (1819–1892), precursor do Modernismo. Verifique esses aspectos na <em>Ode Triunfal</em>.</p></div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão:</div><p>De Whitman (<em>Folhas de Relva</em>), Campos herda o <strong>verso livre longo</strong>, as <strong>enumerações</strong>, o tom de <strong>exclamação</strong> e o desejo de <strong>ser tudo e todos</strong> (“Ah não ser eu toda a gente e toda a parte!”).</p></div>
+
+  <h4>3ª fase: pessoal (intimista)</h4>
+  <p>É a fase <strong>“autobiográfica”</strong> e a mais <strong>melancólica</strong> de Campos. Traz uma profunda <strong>crise de identidade</strong>, amargura, desânimo e contradições. Ele se sente um <strong>“estrangeiro”</strong> no mundo em que vive. É o poeta do <strong>“NÃO”</strong>.</p>
+  <div class="poem a two"><div class="pt"><b>Lisbon Revisited (1923)</b> · <span class="muted" style="text-transform:none;letter-spacing:0">Obs. da apostila: o inglês é a língua do exílio de Pessoa e de Álvaro de Campos</span></div>
+  <div class="v"><mark>Não: não quero nada.
+Já disse que não quero nada.</mark>
+
+<mark>Não me venham com conclusões!
+A única conclusão é morrer.</mark>
+
+Não me tragam estéticas!
+Não me falem em moral!
+Tirem-me daqui a metafísica!
+Não me apregoem sistemas completos, não me enfileirem conquistas
+Das ciências (das ciências, Deus meu, das ciências!) —
+Das ciências, das artes, da civilização moderna!
+
+Que mal fiz eu aos deuses todos?
+
+Se têm a verdade, guardem-na!
+
+<mark>Sou um técnico, mas tenho técnica só dentro da técnica.
+Fora disso sou doido, com todo o direito a sê-lo.</mark>
+Com todo o direito a sê-lo, ouviram?
+
+Não me macem, por amor de Deus!
+
+<mark>Queriam-me casado, fútil, quotidiano e tributável?</mark>
+Queriam-me o contrário disto, o contrário de qualquer coisa?
+Se eu fosse outra pessoa, fazia-lhes, a todos, a vontade.
+Assim, como sou, tenham paciência!
+Vão para o diabo sem mim,
+Ou deixem-me ir sozinho para o diabo!
+Para que havemos de ir juntos?
+
+Não me peguem no braço!
+Não gosto que me peguem no braço. Quero ser sozinho.
+Já disse que sou sozinho!
+Ah, que maçada quererem que eu seja de companhia!
+
+Ó céu azul — o mesmo da minha infância —,
+Eterna verdade vazia e perfeita!
+Ó macio Tejo ancestral e mudo,
+Pequena verdade onde o céu se reflete!
+Ó mágoa revisitada, Lisboa de outrora de hoje!
+Nada me dais, nada me tirais, nada sois que eu me sinta.
+
+Deixem-me em paz! Não tardo, que eu nunca tardo…
+E enquanto tarda o Abismo e o Silêncio quero estar sozinho!</div></div>
+  <div class="box ok"><div class="tag">🔍 Como ler “Lisbon Revisited (1923)”</div>
+  <ul>
+    <li><strong>A negação total:</strong> recusa conclusões, estética, moral, metafísica, ciência, “civilização moderna”. <strong>Note a virada:</strong> a modernidade que ele exaltava na <em>Ode Triunfal</em> agora é rejeitada.</li>
+    <li><strong>O indivíduo contra a sociedade:</strong> “casado, fútil, quotidiano e tributável” resume a vida burguesa que ele recusa. Em vez disso, “doido, com todo o direito a sê-lo”.</li>
+    <li><strong>A cidade da infância não consola:</strong> Lisboa é “de outrora de hoje”, a mesma e outra. “Nada me dais, nada me tirais”: nem a memória salva.</li>
+    <li><strong>Desejo de morte e solidão:</strong> “A única conclusão é morrer”; “enquanto tarda o Abismo e o Silêncio quero estar sozinho”. É o <strong>niilismo</strong>.</li>
+  </ul></div>
+
+  <h3>Mais Campos nos slides da Aula 26</h3>
+  <div class="poem a"><div class="pt"><b>“Não sou nada…”</b> · slide com a assinatura de Álvaro de Campos</div>
+  <div class="v"><mark>Não sou nada.
+Nunca serei nada.
+Não posso querer ser nada.
+À parte isso, tenho em mim todos os sonhos do mundo.</mark></div>
+  <div class="poem-note"><span class="comp-lead">Complemento:</span> são os versos iniciais de <strong>“Tabacaria”</strong> (1928), o poema mais famoso de Campos e um dos mais cobrados de toda a obra de Pessoa. Estrutura: três negações absolutas seguidas de uma virada (“À parte isso…”). O eu é <strong>nada</strong> na realidade e <strong>tudo</strong> no sonho. O contraste entre o sonho infinito e a realidade vazia é o centro da 3ª fase.</div></div>
+  <div class="grid2">
+  <div class="poem a" style="margin:0"><div class="pt"><b>Começo a conhecer-me. Não existo.</b></div>
+  <div class="v">Começo a conhecer-me. Não existo.
+<mark>Sou o intervalo entre o que desejo ser e os outros me fizeram,
+Ou metade desse intervalo, porque também há vida…</mark>
+Sou isso, enfim…
+Apague a luz, feche a porta e deixe de ter barulho de chinelas no corredor.
+Fique eu no quarto só com o grande sossego de mim mesmo.
+É um universo barato.</div>
+  <div class="poem-note">A identidade como <strong>intervalo</strong>, um espaço vazio entre o eu desejado e o eu que os outros construíram. É a heteronomia de novo: somos feitos também pela vontade alheia. O final é irônico: o “grande sossego de mim mesmo” é “um universo barato”.</div></div>
+  <div class="poem a" style="margin:0"><div class="pt"><b>Depus a Máscara</b></div>
+  <div class="v"><mark>Depus a máscara e vi-me ao espelho. —</mark>
+Era a criança de há quantos anos.
+Não tinha mudado nada…
+É essa a vantagem de saber tirar a máscara.
+É-se sempre a criança,
+O passado que foi
+A criança.
+<mark>Depus a máscara, e tornei a pô-la.
+Assim é melhor,
+Assim sem a máscara.</mark>
+E volto à personalidade como a um términus de linha.</div>
+  <div class="poem-note">Tema das <strong>máscaras</strong>, central em Pessoa: por trás delas está a criança (o passado). Mas o eu logo põe a máscara de novo. O verso “Assim é melhor, / Assim sem a máscara” é ambíguo de propósito: ele acabou de recolocá-la. A <strong>máscara vira o próprio rosto</strong>. A personalidade é um “términus de linha”, ponto final de uma viagem.</div></div>
+  </div>
+</section>
+
+<!-- 7. ORTÔNIMO -->
+<section class="block" id="ortonimo">
+  <div class="sec-head"><span class="sec-num">07</span><h2>Fernando Pessoa ortônimo: “ele mesmo”, que pensa com a imaginação</h2></div>
+  <div class="banner o"><div class="mono-ic">FP</div><div><h3>O ortônimo (“ele mesmo”)</h3><p>Assinando com o próprio nome, Pessoa tem duas faces: a <strong>lírica</strong> (<em>Cancioneiro</em> e <em>Quadras ao gosto popular</em>) e a <strong>saudosista-nacionalista</strong> (<em>Mensagem</em>).</p></div></div>
+  <div class="box warn"><div class="tag">⚠ Não caia nesta</div><p>“Ortônimo” <strong>não</strong> é igual a “sincero”. Mesmo com o próprio nome, Pessoa continua <em>fingindo</em> no sentido de “Autopsicografia”. O ortônimo também é uma construção poética, uma das faces do poliedro.</p></div>
+
+  <h3>A poesia lírica: <em>Cancioneiro</em> e <em>Quadras ao gosto popular</em></h3>
+  <div class="grid2">
+    <div class="card"><h4 style="margin-top:0">1. Lirismo profundo e tradição</h4><p>Lirismo de extrema sensibilidade e grande preciosidade poética. Como os títulos sugerem, <strong>resgata a tradição lírica portuguesa</strong> (o cancioneiro é a coleção de cantigas medievais).</p></div>
+    <div class="card"><h4 style="margin-top:0">2. Alma desamparada</h4><p>Poemas que expõem uma alma <strong>desamparada e solitária</strong>, muitas vezes numa <strong>interseção</strong> entre a realidade interior e a exterior.</p></div>
+    <div class="card"><h4 style="margin-top:0">3. O mistério da existência</h4><p>Poeta preocupado em compreender o <strong>mistério da existência</strong>, que lhe causa perplexidade. Por isso o <strong>cotidiano</strong> ganha expressividade.</p></div>
+    <div class="card"><h4 style="margin-top:0">4. Metalinguagem</h4><p>Como poeta genial, Pessoa se preocupa com a própria arte: a <strong>metalinguagem</strong> (“Autopsicografia”, “Isto”).</p></div>
+  </div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: a “dor de pensar”</div>
+  <p>Um conceito muito usado pela crítica para o ortônimo é a <strong>dor de pensar</strong>: o eu lírico não consegue simplesmente sentir, porque a consciência sempre intervém e analisa. Isso o faz sofrer. É o <strong>oposto de Caeiro</strong>, que “não pensa”. Formalmente, o ortônimo costuma usar <strong>versos curtos</strong> (redondilhas de 5 ou 7 sílabas), <strong>rimas</strong> e <strong>musicalidade</strong>, herança do Simbolismo e da poesia popular portuguesa.</p></div>
+
+  <h4>Os versos da apostila</h4>
+  <div class="grid2">
+  <div class="poem o" style="margin:0"><div class="pt"><b>1</b></div>
+  <div class="v">“Temos, todos que vivemos,
+<mark>Uma vida que é vivida
+E outra vida que é pensada,</mark>
+E a única vida que temos
+É essa que é dividida
+Entre a verdadeira e a errada.”</div>
+  <div class="poem-note">A cisão do ser: vida <strong>vivida</strong> × vida <strong>pensada</strong>. A única vida real é essa, dividida. É a dor de pensar em forma de quadra.</div></div>
+  <div class="poem o" style="margin:0"><div class="pt"><b>2</b></div>
+  <div class="v">“<mark>A criança que fui chora na estrada.</mark>
+Deixei-a ali quando vim ser quem sou;
+Mas hoje, vendo que o que sou é nada,
+Quero ir buscar quem fui onde ficou.”</div>
+  <div class="poem-note">A <strong>nostalgia da infância</strong> como tempo perdido de inteireza. O eu adulto é “nada” e tenta voltar a quem foi. Compare com Campos em “Depus a máscara”, onde também aparece a criança.</div></div>
+  </div>
+  <div class="poem o two" style="margin-top:16px"><div class="pt"><b>3 · Pobre velha música</b></div>
+  <div class="v">Pobre velha música!
+Não sei por que agrado,
+Enche-se de lágrimas
+Meu olhar parado.
+
+Recordo outro ouvir-te,
+Não sei se te ouvi
+Nessa minha infância
+Que me lembra em ti.
+
+Com que ânsia tão raiva
+Quero aquele outrora!
+<mark>E eu era feliz? Não sei:
+Fui-o outrora agora.</mark></div>
+  <div class="poem-note">A música desperta uma <strong>memória incerta</strong> (“Não sei se te ouvi”). No final, o paradoxo: “Fui-o outrora agora”. A felicidade do passado só existe <em>agora</em>, na lembrança. Talvez ela nunca tenha acontecido e seja criada pela imaginação no presente. É a imaginação construindo o passado, típico do ortônimo.</div></div>
+
+  <h4>Os poemas dos slides da Aula 26</h4>
+  <div class="grid2">
+  <div class="poem o" style="margin:0"><div class="pt"><b>Entre o sono e sonho</b></div>
+  <div class="v">Entre o sono e sonho,
+<mark>Entre mim e o que em mim
+É o quem eu me suponho
+Corre um rio sem fim.</mark>
+
+Passou por outras margens,
+Diversas mais além,
+Naquelas várias viagens
+Que todo o rio tem.
+
+Chegou onde hoje habito
+A casa que hoje sou.
+Passa, se eu me medito;
+Se desperto, passou.
+
+E quem me sinto e morre
+No que me liga a mim
+Dorme onde o rio corre —
+Esse rio sem fim.</div>
+  <div class="poem-note"><strong>A fragmentação do eu:</strong> entre “mim” e “quem eu me suponho” corre um <strong>rio sem fim</strong>, uma distância que não se atravessa. O eu não coincide consigo mesmo. As “outras margens” e “várias viagens” lembram os <strong>outros eus</strong>. Note a forma: quadras, versos curtos, rimas (sonho/suponho, mim/fim), bem musical.</div></div>
+  <div class="poem o" style="margin:0"><div class="pt"><b>Chove? Nenhuma chuva cai…</b></div>
+  <div class="v"><mark>Chove? Nenhuma chuva cai…</mark>
+Então onde é que eu sinto um dia
+Em que o ruído da chuva atrai
+A minha inútil agonia?
+
+Onde é que chove, que eu o ouço?
+Onde é que é triste, ó claro céu?
+Eu quero sorrir-te, e não posso,
+Ó céu azul, chamar-te de meu…
+
+E o escuro ruído da chuva
+É constante em meu pensamento.
+Meu ser é a invisível curva
+Traçada pelo som do vento…
+
+E eis que ante o sol e o azul do dia,
+Como se a hora me estorvasse,
+Eu sofro… E a luz e a sua alegria
+Cai aos meus pés como um disfarce.
+
+<mark>Ah, na minha alma sempre chove.
+Há sempre escuro dentro de mim.</mark>
+Se escuto, alguém dentro de mim ouve
+A chuva, como a voz de um fim…</div>
+  <div class="poem-note"><strong>O exemplo perfeito da característica 2</strong> (interseção interior × exterior): <strong>fora</strong> há sol e céu azul, <strong>dentro</strong> chove. A paisagem externa não consola, e a alegria da luz é “um disfarce”. Até “alguém dentro de mim ouve” mostra um eu dividido.</div></div>
+  </div>
+<pre class="dg">   EXTERIOR  ☀  sol, céu azul, alegria da luz
+        ╳  <b>não coincide</b>
+   INTERIOR  ☂  “na minha alma sempre chove”, “escuro dentro de mim”
+   → o eu lírico vive na <b>interseção</b> dos dois planos (e sofre com o desencontro)</pre>
+
+  <!-- MENSAGEM -->
+  <h3 id="mensagem">A poesia saudosista-nacionalista: <em>Mensagem</em></h3>
+  <p>Slide da Aula 26: <strong>“Um coração português: nacionalismo e saudade!”</strong></p>
+  <div class="poem o"><div class="pt"><b>O dos Castelos</b> · <em>Mensagem</em> (verso destacado no slide)</div>
+  <div class="v">“Fita, com olhar esfíngico e fatal,
+<mark>O Ocidente, futuro do passado.</mark>
+O rosto com que fita é Portugal.”</div>
+  <div class="poem-note"><span class="comp-lead">Complemento:</span> é o primeiro poema do livro. A <strong>Europa</strong> aparece deitada como uma figura humana, e <strong>Portugal é o rosto</strong> dela, voltado para o Ocidente, o Atlântico. “Futuro do passado”: o destino de Portugal está no mar, como esteve na época dos Descobrimentos. “Esfíngico” (como a Esfinge) sugere mistério e enigma.</div></div>
+
+  <h4>Sobre o livro (apostila)</h4>
+  <div class="card">
+    <ol>
+      <li>É a <strong>única obra em língua portuguesa publicada por Pessoa em vida</strong>.</li>
+      <li>Exalta o <strong>sentimento nacionalista</strong> presente no movimento da <strong>Renascença Portuguesa</strong>, voltando ao passado glorioso de Portugal: a formação do Império português (o <strong>5º Império</strong>), a identificação com o <strong>mar</strong> (essencial aos portugueses), a <strong>expansão marítima</strong> e o <strong>mito do Sebastianismo</strong>.</li>
+      <li>A obra é dividida em <strong>três partes</strong>.</li>
+    </ol>
+    <p class="muted" style="margin:0">A grafia dos poemas segue a forma da época (por isso “mytho”, “portuguez”, “quiz”, “resaram”).</p>
+  </div>
+
+<pre class="dg">                         <span class="o">MENSAGEM</span> (1934)
+     ┌──────────────────────────┼──────────────────────────┐
+  <span class="o">1ª BRASÃO</span>                 <span class="o">2ª MAR PORTUGUEZ</span>            <span class="o">3ª O ENCOBERTO</span>
+  a formação de Portugal    os navegantes e o desejo     o mito sebastianista e o
+  até D. Sebastião          de possuir os mares          sonho do Quinto Império
+  (NASCIMENTO)              (REALIZAÇÃO / APOGEU)        (MORTE → RENASCIMENTO?)
+  ex.: Ulisses,             ex.: Mar Português,          ex.: Nevoeiro
+  D. Sebastião              Padrão, Prece                “É a Hora!”
+                            (lembre-se de <em>Os Lusíadas</em>)</pre>
+
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: dois conceitos indispensáveis</div>
+  <p><strong>Sebastianismo:</strong> o rei <strong>D. Sebastião</strong> desapareceu na batalha de <strong>Alcácer-Quibir</strong> (Marrocos, 1578), sem deixar herdeiro. Pouco depois (1580), Portugal passou ao domínio espanhol (União Ibérica). Nasceu então a crença de que o rei <strong>voltaria numa manhã de nevoeiro</strong> para restaurar a glória portuguesa. Em <em>Mensagem</em>, D. Sebastião é símbolo do <strong>sonho</strong> e da <strong>loucura criadora</strong>.</p>
+  <p><strong>Quinto Império:</strong> depois de quatro grandes impérios da história, viria um quinto, português. Para Pessoa, não seria um império militar ou territorial, mas <strong>espiritual e cultural</strong>. A ideia vem da tradição profética, retomada por Padre Antônio Vieira.</p>
+  <p><strong>Contexto:</strong> <em>Mensagem</em> saiu em 1934, num Portugal que Pessoa via em decadência. O livro é um chamado ao <strong>renascimento</strong> nacional. Com 44 poemas, venceu um prêmio de poesia do governo português (na categoria secundária, por ter poucas páginas).</p></div>
+
+  <h4>Os poemas de <em>Mensagem</em> no material</h4>
+  <div class="grid2">
+  <div class="poem o" style="margin:0"><div class="pt"><b>I · Os Castelos — Primeiro: Ulisses</b> · Brasão</div>
+  <div class="v"><mark>O mytho é o nada que é tudo.</mark>
+O mesmo sol que abre os céus
+É um mytho brilhante e mudo —
+O corpo morto de Deus,
+Vivo e desnudo.
+
+Este, que aqui aportou,
+Foi por não ser existindo.
+Sem existir nos bastou.
+<mark>Por não ter vindo foi vindo
+E nos creou.</mark>
+
+Assim a lenda se escorre
+A entrar na realidade,
+E a fecundal-a decorre.
+Em baixo, a vida, metade
+De nada, morre.</div>
+  <div class="poem-note">Segundo a lenda, <strong>Ulisses</strong> teria fundado Lisboa (<em>Olisipo</em>). Pessoa sabe que é só mito, e esse é o ponto: <strong>o mito, mesmo não existindo, cria a realidade</strong> (“Por não ter vindo foi vindo / E nos criou”). Paradoxos: “o nada que é tudo”. A lenda “fecunda” a realidade, enquanto a vida sem mito é “metade de nada”.<br><span class="muted">A apostila traz “E a fecundal – a decorre”, erro de digitação. O correto é “E a fecundal-a decorre” (= e decorre fecundando-a).</span></div></div>
+  <div class="poem o" style="margin:0"><div class="pt"><b>II · As Quinas — Quinta: D. Sebastião, Rei de Portugal</b> · Brasão</div>
+  <div class="v"><mark>Louco, sim, louco, porque quiz grandeza</mark>
+Qual a Sorte a não dá.
+Não coube em mim minha certeza;
+Por isso onde o areal está
+Ficou meu ser que houve, não o que há.
+
+Minha loucura, outros que me a tomem
+Com o que nella ia.
+<mark>Sem a loucura que é o homem
+Mais que a besta sadia,
+Cadaver addiado que procria?</mark></div>
+  <div class="poem-note">Quem fala é o próprio <strong>D. Sebastião</strong>. Ele assume a “loucura” de ter querido grandeza além do possível. No “areal” (as areias de Alcácer-Quibir) ficou seu corpo, “o ser que houve”. O sonho, “o que há”, continua vivo. Ele pede que <strong>outros herdem sua loucura</strong>. A pergunta final é a mais citada: sem o sonho, o homem é só um animal saudável, um <strong>“cadáver adiado que procria”</strong>.</div></div>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+  <div class="poem o" style="margin:0"><div class="pt"><b>III · Mar Português</b> · Mar Portuguez</div>
+  <div class="v"><mark>Ó mar salgado, quanto do teu sal
+São lágrimas de Portugal!</mark>
+Por te cruzarmos, quantas mães choraram,
+Quantos filhos em vão resaram!
+Quantas noivas ficaram por casar
+Para que fosses nosso, ó mar!
+
+<mark>Valeu a pena? Tudo vale a pena
+Se a alma não é pequena.</mark>
+Quem quere passar além do Bojador
+Tem que passar além da dor.
+Deus ao mar o perigo e o abysmo deu,
+Mas nelle é que espelhou o céu.</div>
+  <div class="poem-note"><strong>O poema mais cobrado de <em>Mensagem</em>.</strong><br>
+  1ª estrofe: o <strong>custo humano</strong> das navegações. O sal do mar é feito das lágrimas de mães, filhos e noivas (<strong>hipérbole</strong> e metáfora).<br>
+  2ª estrofe: a <strong>justificativa</strong>. Vale a pena se a alma for grande. O <strong>Cabo Bojador</strong> simboliza o limite a vencer: para ir além do medo é preciso ir além da dor. O mar tem perigo e abismo, mas é nele que “espelhou o céu”: a glória, o divino.<br>
+  <span class="comp-lead">Complemento:</span> o diálogo com <em>Os Lusíadas</em> é inevitável. Lá, o <strong>Velho do Restelo</strong> condena as navegações pelo sofrimento que causam. Pessoa reconhece a dor, mas responde: “Tudo vale a pena / Se a alma não é pequena”.</div></div>
+  <div class="poem o" style="margin:0"><div class="pt"><b>IV · Os Tempos — Quinto: Nevoeiro</b> · O Encoberto</div>
+  <div class="v">Nem rei nem lei, nem paz nem guerra,
+Define com perfil e ser
+Este fulgor baço da terra
+Que é Portugal a entristecer —
+Brilho sem luz e sem arder,
+Como o que o fogo-fátuo encerra.
+
+<mark>Ninguém sabe que coisa quere.
+Ninguém conhece que alma tem,
+Nem o que é mal nem o que é bem.</mark>
+(Que ancia distante perto chora?)
+<mark>Tudo é incerto e derradeiro.
+Tudo é disperso, nada é inteiro.
+Ó Portugal, hoje és nevoeiro…
+
+É a Hora!</mark></div>
+  <div class="poem-note"><strong>O último poema do livro.</strong> O diagnóstico do <strong>presente</strong>: Portugal sem rei, sem lei, sem identidade, um “fulgor baço”, “brilho sem luz”, como o <strong>fogo-fátuo</strong> (luzinha que aparece em pântanos e cemitérios). “Nevoeiro” tem sentido duplo: a <strong>confusão</strong> atual e a <strong>névoa</strong> em que, segundo o mito, D. Sebastião voltaria. Por isso o grito final, <strong>“É a Hora!”</strong>: é o momento do renascimento.<br><span class="comp-lead">Complemento:</span> “Nem rei nem lei” alude ao Portugal da época, pós-monarquia (a República é de 1910) e marcado por instabilidade política.</div></div>
+  </div>
+
+  <div class="poem o" style="margin-top:16px"><div class="pt"><b>Prece</b> · Mar Portuguez (slide da Aula 26)</div>
+  <div class="v">Senhor, a noite veio e a alma é vil.
+Tanta foi a tormenta e a vontade!
+Restam-nos hoje, no silêncio hostil,
+O mar universal e a saudade.
+
+<mark>Mas a chama, que a vida em nós criou,
+Se ainda há vida ainda não é finda.
+O frio morto em cinzas a ocultou:
+A mão do vento pode erguê-la ainda.</mark></div>
+  <div class="poem-note">Estrutura <strong>decadência → esperança</strong>. 1ª estrofe: depois da glória (“tormenta e vontade”), restam só o mar e a <strong>saudade</strong>. 2ª estrofe: a chama está escondida nas cinzas, mas o vento pode reacendê-la.<br><span class="comp-lead">Complemento:</span> o slide mostra duas estrofes. O poema completo tem uma terceira, que termina com um pedido de nova conquista: “E outra vez conquistemos a Distância — / Do mar ou outra, mas que seja nossa!”. É o Quinto Império: uma conquista que pode não ser do mar, mas <em>espiritual</em>.</div></div>
+
+  <h4>Os outros trechos de <em>Mensagem</em> na apostila</h4>
+  <div class="grid2">
+  <div class="poem o" style="margin:0"><div class="pt"><b>1</b> · “D. João, Infante de Portugal” (Brasão) · trecho</div>
+  <div class="v">“Porque é do portuguez, pae de amplos mares,
+Querer, poder só isto:
+<mark>O inteiro mar, ou a orla vã desfeita —
+O todo, ou o seu nada.</mark>”</div>
+  <div class="poem-note">O “caráter português” segundo Pessoa: <strong>tudo ou nada</strong>. Ou o mar inteiro, ou só a espuma da praia. Não há meio-termo.<br><span class="muted">A apostila não dá o título. A identificação do poema é complemento.</span></div></div>
+  <div class="poem o" style="margin:0"><div class="pt"><b>2</b> · “Padrão” (Mar Portuguez) · trecho</div>
+  <div class="v">“<mark>Que o mar com fim será grego ou romano:
+O mar sem fim é portuguez.</mark>
+E a cruz ao alto diz que o que me há na alma
+E faz a febre em mim de navegar
+Só encontrará de Deus na eterna calma
+O porto sempre por achar.”</div>
+  <div class="poem-note">O Mediterrâneo, “mar com fim”, pertenceu a gregos e romanos. O <strong>oceano</strong>, “mar sem fim”, é português. A <strong>febre de navegar</strong> nunca se completa: o “porto sempre por achar” só será encontrado em Deus. O “padrão” era o marco de pedra com uma cruz que os navegadores fincavam nas terras descobertas.<br><span class="muted">A apostila não dá o título. A identificação do poema é complemento.</span></div></div>
+  </div>
+
+  <div class="box star"><div class="tag">★ O fio que liga Mensagem</div>
+<pre class="dg" style="margin:8px 0 0;background:transparent;border:0;padding:0">MITO (Ulisses: “o nada que é tudo”) ─► SONHO/LOUCURA (D. Sebastião) ─► AÇÃO (Mar Português)
+      ─► DECADÊNCIA (Prece: “a alma é vil”) ─► ESPERANÇA de RENASCIMENTO (Nevoeiro: “É a Hora!”)
+  → o que move um povo não é a realidade, é o <b>mito</b> e o <b>sonho</b></pre></div>
+</section>
+
+<!-- 8. COMPARAÇÃO -->
+<section class="block" id="comparacao">
+  <div class="sec-head"><span class="sec-num">08</span><h2>Quadro comparativo: os quatro lado a lado</h2></div>
+  <div class="tw"><table>
+    <thead><tr><th>Critério</th><th class="c">Caeiro</th><th class="r">Reis</th><th class="a">Campos</th><th class="o">Ortônimo</th></tr></thead>
+    <tbody>
+      <tr><td><strong>“Pensa com…”</strong> (apostila)</td><td class="c"><strong>os sentidos</strong></td><td class="r"><strong>a razão</strong></td><td class="a"><strong>a emoção</strong></td><td class="o"><strong>a imaginação</strong></td></tr>
+      <tr><td><strong>Papel</strong></td><td>O mestre</td><td>Discípulo clássico</td><td>Discípulo moderno</td><td>O “criador”, também discípulo de Caeiro</td></tr>
+      <tr><td><strong>Visão de mundo</strong></td><td>Sensacionismo, objetividade, antimetafísica</td><td>Estoicismo + epicurismo, <em>carpe diem</em> moderado</td><td>Sensacionismo exaltado → tédio e niilismo</td><td>Fragmentação do eu, dor de pensar, fingimento; nacionalismo místico</td></tr>
+      <tr><td><strong>Natureza</strong></td><td>Tudo, vista sem pensar</td><td>Cenário da passagem do tempo (rio, flores)</td><td>Troca a natureza pela máquina e pela cidade</td><td>Paisagem que contrasta com o interior</td></tr>
+      <tr><td><strong>Religião / deuses</strong></td><td>Paganismo panteísta; Menino Jesus natural; “não é ateu”</td><td>Paganismo erudito, politeísta; Cristo “mais novo” que os outros deuses</td><td>Máquina como “Revelação metálica de Deus”; depois, descrença</td><td>Misticismo, Deus e mito (<em>Mensagem</em>)</td></tr>
+      <tr><td><strong>Tempo</strong></td><td>Só as coisas reais, “não o tempo que as mede”</td><td>Consciência aguda da brevidade; aceitar o Fado</td><td>“O Momento” (futurismo); depois, cansaço</td><td>Nostalgia da infância; passado glorioso e futuro sonhado</td></tr>
+      <tr><td><strong>Forma</strong></td><td>Verso livre e branco, linguagem oral e simples</td><td>Odes, estrofes regulares, sem rima, hipérbatos, latinismos</td><td>Verso livre longo, exclamações, onomatopeias (fase 1: quadras rimadas)</td><td>Versos curtos, rima, musicalidade (lírica); poemas simbólicos (<em>Mensagem</em>)</td></tr>
+      <tr><td><strong>Obras / poemas-chave</strong></td><td><em>O Guardador de Rebanhos</em>, <em>O Pastor Amoroso</em>, <em>Poemas Inconjuntos</em></td><td><em>Odes</em> (“Vem sentar-te comigo, Lídia”)</td><td>“Opiário”, “Ode Triunfal”, “Lisbon Revisited”, “Tabacaria”</td><td>“Autopsicografia”, “Isto”, <em>Cancioneiro</em>, <em>Mensagem</em></td></tr>
+      <tr><td><strong>Frase-assinatura</strong></td><td>“Pensar é estar doente dos olhos”</td><td>“Sê rei de ti próprio”</td><td>“Não sou nada… tenho em mim todos os sonhos do mundo”</td><td>“O poeta é um fingidor”</td></tr>
+    </tbody></table></div>
+
+  <h3>Como identificar o autor de um trecho em 30 segundos</h3>
+<pre class="dg"><b>LEIA O TRECHO</b> e responda na ordem:
+
+ 1) Há deuses greco-romanos, Lídia/Neera/Cloe, Fado, óbolo, conselhos no imperativo,
+    frases invertidas, tom sereno sobre a morte?  ─── SIM ──► <span class="r">RICARDO REIS</span>
+                    │ NÃO
+ 2) Há máquinas, cidade, "Ó ...!", "Eia!", onomatopeias, versos longuíssimos,
+    OU tédio/angústia/"Não sou nada"/recusa furiosa da sociedade? ── SIM ──► <span class="a">ÁLVARO DE CAMPOS</span>
+                    │ NÃO
+ 3) Natureza vista "sem pensar", ataque à metafísica, "as coisas são o que são",
+    rebanho, linguagem de conversa, verso livre? ─── SIM ──► <span class="c">ALBERTO CAEIRO</span>
+                    │ NÃO
+ 4) Versos curtos com rima, música, eu dividido, sonho, fingimento, "dor de pensar"
+    OU Portugal, mar, D. Sebastião, mito, grafia antiga ("portuguez")? ─ SIM ─► <span class="o">PESSOA ORTÔNIMO</span></pre>
+
+  <div class="box warn"><div class="tag">⚠ Três pares que confundem</div>
+  <ul>
+    <li><strong>Caeiro × Reis (natureza e paganismo):</strong> os dois falam de natureza e são pagãos. A <em>linguagem</em> decide: Caeiro é simples e oral; Reis é erudito, com mitologia e sintaxe latina. Caeiro <em>sente</em> a natureza; Reis a <em>usa para refletir</em> sobre a morte.</li>
+    <li><strong>Caeiro × Reis (presente):</strong> Reis é o poeta do <em>carpe diem</em>. Caeiro rejeita até a ideia de “presente”: “não quero o presente, quero a realidade”.</li>
+    <li><strong>Campos 3ª fase × ortônimo (angústia):</strong> os dois sofrem. Campos grita, usa verso livre longo, é agressivo e irônico (“Não me macem!”). O ortônimo é contido, musical, com versos curtos e rima.</li>
+  </ul></div>
+</section>
+
+<!-- 9. PEGADINHAS -->
+<section class="block" id="pegadinhas">
+  <div class="sec-head"><span class="sec-num">09</span><h2>Pontos de atenção e pegadinhas</h2></div>
+  <div class="grid2">
+    <div class="box warn" style="margin:0"><div class="tag">1 · Pseudônimo ≠ heterônimo</div><p>Pseudônimo é só um nome falso. Heterônimo é outra <em>personalidade</em>, com biografia e estilo próprios. Alternativa que diga “Caeiro é um pseudônimo de Pessoa” está <strong>errada</strong>.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">2 · Heteronomia ≠ heteronímia</div><p>Heteronomia (<em>nomos</em>, regra) é o conceito de Kant. Heteronímia (<em>ónoma</em>, nome) é o fenômeno de Pessoa. A aula parte da primeira para explicar a segunda.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">3 · Fingir ≠ mentir</div><p>Em “Autopsicografia”, o poeta finge “a dor que deveras sente”. Fingir é dar forma artística, é intelectualizar a emoção. Não é ser insincero.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">4 · As “três dores”</div><p>O leitor não sente “as duas que ele teve” (a real e a fingida), “mas só a que eles não têm”: uma terceira dor, a da leitura. Cuidado com alternativas que digam que o leitor sente a dor real do poeta.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">5 · Caeiro não é ateu</div><p>Ele recusa o Deus transcendente do Cristianismo, mas aceita Deus <em>se</em> Deus for as flores, as árvores e o sol (panteísmo). A apostila é explícita: “ele não é ateu”.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">6 · Caeiro não é o poeta do carpe diem</div><p>Quem aconselha a aproveitar o momento, com moderação, é Reis. Caeiro não quer nem o presente, porque “presente” ainda é uma ideia de tempo.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">7 · O carpe diem de Reis é contido</div><p>Não é “viva intensamente”. É gozar com calma, sem paixões, para não sofrer (“Desenlacemos as mãos”). Intensidade e excesso são de Campos.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">8 · Campos não é só futurista</div><p>Ele tem três fases. A mais cobrada em interpretação é a 3ª (intimista, “Tabacaria”, “Lisbon Revisited”), que nega a euforia da 2ª.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">9 · Mensagem ≠ ufanismo ingênuo</div><p>O livro exalta o passado, mas reconhece a dor (“quantas mães choraram”) e a decadência presente (“Ó Portugal, hoje és nevoeiro”). É um nacionalismo <strong>místico e simbólico</strong>, que aposta no mito e num império espiritual, não territorial.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">10 · Ortônimo também finge</div><p>Assinar com o próprio nome não torna a poesia confessional. Pessoa rejeitou justamente a poesia romântica confessional.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">11 · Caeiro × Mensagem sobre o Tejo e o mar</div><p>Caeiro despreza quem vê no Tejo “a memória das naus”. <em>Mensagem</em> é inteira sobre essa memória. Não atribua a Caeiro qualquer exaltação histórica.</p></div>
+    <div class="box warn" style="margin:0"><div class="tag">12 · Frases falsas da internet</div><p>“O valor das coisas não está no tempo que elas duram…” não aparece na obra conhecida de Pessoa. Não a use como citação dele em redação.</p></div>
+  </div>
+</section>
+
+<!-- 10. O QUE MAIS CAI -->
+<section class="block" id="prova">
+  <div class="sec-head"><span class="sec-num">10</span><h2>O que mais cai em prova</h2></div>
+  <div class="box star"><div class="tag">★ Ranking de temas (vestibulares concorridos e ENEM)</div>
+  <ol>
+    <li><strong>Reconhecer o heterônimo pelo trecho.</strong> É o clássico: dão um poema sem autor e pedem a característica ou o heterônimo. Use o fluxograma da seção 8.</li>
+    <li><strong>“Autopsicografia” e o fingimento poético.</strong> Interpretação do “fingidor”, das “duas dores” e da dor do leitor, e da relação razão × coração.</li>
+    <li><strong>Heterônimo × pseudônimo × ortônimo.</strong> Definições e o conceito de despersonalização.</li>
+    <li><strong>Caeiro:</strong> Sensacionismo, antimetafísica, “pensar é estar doente dos olhos”, o paradoxo da antifilosofia.</li>
+    <li><strong>Reis:</strong> <em>carpe diem</em>, estoicismo × epicurismo, a ode a Lídia, forma clássica (Horácio).</li>
+    <li><strong>Campos:</strong> as três fases, o futurismo da “Ode Triunfal” e a “Tabacaria” (“Não sou nada…”).</li>
+    <li><strong><em>Mensagem</em>:</strong> “Mar Português” (custo × glória, “Tudo vale a pena…”), Sebastianismo, Quinto Império, estrutura em três partes, intertexto com <em>Os Lusíadas</em>. <span class="comp-lead">Complemento:</span> o livro já foi leitura obrigatória da FUVEST (há questões sobre ele na 1ª fase de 2022, por exemplo).</li>
+    <li><strong>Contexto:</strong> Modernismo português, revista <em>Orpheu</em> (1915), influência de Whitman e do Futurismo.</li>
+  </ol></div>
+  <div class="box comp"><div class="tag">＋ Complemento para melhor compreensão: como as questões costumam vir</div>
+  <ul>
+    <li><strong>Interdisciplinar com Filosofia:</strong> estoicismo, epicurismo, metafísica e, pela Aula 23, autonomia × heteronomia em Kant.</li>
+    <li><strong>Intertextualidade:</strong> “Mar Português” × <em>Os Lusíadas</em>; Reis × Arcadismo (Gonzaga); Campos × Futurismo/Whitman.</li>
+    <li><strong>Comparação entre dois poemas:</strong> por exemplo, Caeiro XX (o rio da aldeia) × “Mar Português” (o mar da história).</li>
+  </ul></div>
+</section>
+
+<!-- 11. VÍDEOS -->
+<section class="block" id="videos">
+  <div class="sec-head"><span class="sec-num">11</span><h2>Vídeos completos no YouTube</h2></div>
+  <p>Todos os links abaixo levam <strong>direto ao vídeo</strong>, não a uma busca nem a um canal. Cada um foi conferido em 22/09/2026: o vídeo existe, está público e o título e o canal batem com o que está escrito aqui. Os links abrem em nova aba.</p>
+
+  <div class="vtopic">Visão geral · heterônimos</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=xNNssnzpuso" target="_blank" rel="noopener"><span class="vt">Heterônimos de Fernando Pessoa | Resumo de Literatura para o Enem</span><span class="vc">Curso Enem Gratuito · Profa. Camila Brambilla</span><span class="vw">Panorama dos heterônimos com foco em prova: ideal para ver logo depois das seções 1 a 3.</span><span class="play">▶ Assistir no YouTube</span></a>
+    <a class="vcard" href="https://www.youtube.com/watch?v=WYOO8wnxobY" target="_blank" rel="noopener"><span class="vt">Fernando Pessoa – Brasil Escola</span><span class="vc">Brasil Escola Oficial</span><span class="vw">Aula introdutória sobre vida e obra de Pessoa. Abre a série do canal sobre os heterônimos.</span><span class="play">▶ Assistir no YouTube</span></a>
+    <a class="vcard" href="https://www.youtube.com/watch?v=SKeeuyHft8Q" target="_blank" rel="noopener"><span class="vt">Os heterônimos de Fernando Pessoa – aula de Literatura</span><span class="vc">Escolha Educação</span><span class="vw">Outra aula completa sobre os heterônimos, boa para revisar com outra voz.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+
+  <div class="vtopic">Fingimento poético</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=ZiE_10HVCyc" target="_blank" rel="noopener"><span class="vt">A teoria pessoana do fingimento poético | AUTOPSICOGRAFIA</span><span class="vc">Papo de Mala</span><span class="vw">Análise de “Autopsicografia”. Complementa a seção 3.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+
+  <div class="vtopic">Alberto Caeiro</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=enSmqmjbTTM" target="_blank" rel="noopener"><span class="vt">Alberto Caeiro | Heterônimos de Fernando Pessoa</span><span class="vc">Brasil Escola Oficial</span><span class="vw">Características do “mestre”: sensacionismo, natureza, antimetafísica.</span><span class="play">▶ Assistir no YouTube</span></a>
+    <a class="vcard" href="https://www.youtube.com/watch?v=6CVAF3UzmjI" target="_blank" rel="noopener"><span class="vt">Alberto Caeiro | Heterônimo de Fernando Pessoa | Resumo de Literatura para o Enem</span><span class="vc">Curso Enem Gratuito</span><span class="vw">Revisão focada em ENEM sobre Caeiro.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+
+  <div class="vtopic">Ricardo Reis</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=bSx2X5Uq0F8" target="_blank" rel="noopener"><span class="vt">Ricardo Reis | Heterônimos de Fernando Pessoa</span><span class="vc">Brasil Escola Oficial</span><span class="vw">O poeta clássico: odes, <em>carpe diem</em>, estoicismo e epicurismo.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+
+  <div class="vtopic">Álvaro de Campos</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=hEJKbRDONEw" target="_blank" rel="noopener"><span class="vt">Álvaro de Campos | Heterônimos de Fernando Pessoa</span><span class="vc">Brasil Escola Oficial</span><span class="vw">As fases de Campos, do decadentismo ao intimismo.</span><span class="play">▶ Assistir no YouTube</span></a>
+    <a class="vcard" href="https://www.youtube.com/watch?v=UJeAuv6-PKE" target="_blank" rel="noopener"><span class="vt">Aula com Vassoler: Como ler poesia? Análise do poema Tabacaria</span><span class="vc">Flávio Ricardo Vassoler</span><span class="vw">Análise aprofundada de “Tabacaria”. Vá além do trecho dos slides.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+
+  <div class="vtopic">Mensagem</div>
+  <div class="vgrid">
+    <a class="vcard" href="https://www.youtube.com/watch?v=4TmQAWP0bO4" target="_blank" rel="noopener"><span class="vt">MENSAGEM (Fernando Pessoa): todos os poemas analisados para a FUVEST</span><span class="vc">Papo de Mala</span><span class="vw">Análise poema a poema. É a mais completa para <em>Mensagem</em>.</span><span class="play">▶ Assistir no YouTube</span></a>
+    <a class="vcard" href="https://www.youtube.com/watch?v=MizzRlpVhw4" target="_blank" rel="noopener"><span class="vt">FUVEST | O essencial sobre “Mensagem”, de Fernando Pessoa</span><span class="vc">Marcos Ferrari</span><span class="vw">Versão mais enxuta: estrutura, Sebastianismo e poemas principais.</span><span class="play">▶ Assistir no YouTube</span></a>
+  </div>
+  <div class="box doubt"><div class="tag">Sobre a seleção</div><p>Procurei primeiro aulas de professores muito conhecidos entre vestibulandos (como o Professor Noslen), mas não encontrei um vídeo específico deles sobre Pessoa que eu conseguisse confirmar. Por isso eles não estão na lista. Todos os vídeos acima foram confirmados um por um.</p></div>
+</section>
+
+<!-- 12. REVISÃO -->
+<section class="block" id="revisao">
+  <div class="sec-head"><span class="sec-num">12</span><h2>Revisão final dos conceitos principais</h2></div>
+  <ul class="checklist">
+    <li><strong>Heteronomia</strong> (Kant) = sujeição à lei de outro, o oposto de autonomia. <strong>Heteronímia</strong> = o fenômeno de Pessoa de criar outros autores completos.</li>
+    <li><strong>Pseudônimo</strong> = só um nome falso. <strong>Heterônimo</strong> = outra personalidade com vida e estilo. <strong>Ortônimo</strong> = o autor com o próprio nome.</li>
+    <li>Origem, segundo a carta a Casais Monteiro (1935): tendência à <strong>despersonalização</strong> e à <strong>simulação</strong>. Chevalier de Pas aos 6 anos; o <strong>“dia triunfal”</strong> em 8/3/1914.</li>
+    <li>Massaud Moisés: Pessoa como <strong>poliedro</strong>, “uno e diviso”. O preço é a desintegração do eu; o ganho é ver o mundo por vários olhares.</li>
+    <li><strong>Fingimento poético</strong>: fingir = dar forma (<em>fingere</em>). Poesia é a intelectualização da emoção. “Autopsicografia” e “Isto” são artes poéticas.</li>
+    <li>Pessoa rejeita a poesia <strong>confessional</strong> romântica. O eu se descobre <strong>pelo outro</strong>.</li>
+    <li><strong>Caeiro</strong>: mestre, sentidos, Sensacionismo, antimetafísica, panteísmo (não é ateu), linguagem simples, verso livre. Três conjuntos: <em>Guardador</em>, <em>Pastor Amoroso</em> (fraqueza do mestre), <em>Inconjuntos</em> (aprofundamento e morte).</li>
+    <li><strong>Reis</strong>: razão, odes (Horácio), estoicismo e epicurismo, <em>carpe diem</em> moderado, Lídia, mitologia, linguagem erudita. Monarquista exilado no Brasil.</li>
+    <li><strong>Campos</strong>: emoção, engenheiro naval. Três fases: decadentista (“Opiário”), futurista (“Ode Triunfal”, Whitman) e intimista (“Lisbon Revisited”, “Tabacaria”, o poeta do “NÃO”).</li>
+    <li><strong>Ortônimo lírico</strong>: imaginação, musicalidade, tradição do cancioneiro, eu fragmentado, interseção interior × exterior, nostalgia da infância, metalinguagem.</li>
+    <li><strong><em>Mensagem</em></strong> (1934): único livro em português publicado em vida. Três partes: Brasão / Mar Portuguez / O Encoberto. Temas: mar, Descobrimentos, Sebastianismo, Quinto Império. “Mar Português” e “Nevoeiro” (“É a Hora!”).</li>
+  </ul>
+
+  <h3>Teste rápido: quem escreveu?</h3>
+  <p class="muted">Clique na sua resposta. A explicação aparece em seguida.</p>
+  <div id="quiz"></div>
+  <p><span class="score" id="score">Acertos: 0 / 0</span> <button class="tbtn" id="resetQuiz" type="button" style="margin-left:8px">Recomeçar</button></p>
+</section>
+
+<footer>
+  <p><strong>Fontes do conteúdo:</strong> slides “Aula 23 – Fernando Pessoa e sua heteronomia”, slides “Aula 26 – Fernando Pessoa” e apostila “Fernando Pessoa – Trajetória poética” (Colégio Agostiniano Mendel, Profa. Maria Odete Rodrigues Macedo; bibliografia da apostila: <em>Poemas Completos de Alberto Caeiro</em>, Ática; Nicola & Infante, <em>Fernando Pessoa</em>, Scipione; Clenir Bellezi de Oliveira, <em>Arte Literária</em>, Moderna). Os trechos marcados como “Complemento para melhor compreensão” vão além desse material.</p>
+  <p>Os poemas de Fernando Pessoa estão em domínio público. Os trechos seguem o material de aula; diferenças para as versões consagradas estão indicadas ao longo da página.</p>
+</footer>
+</main>
+</div>
+
+<button class="backtop" id="backtop" type="button" aria-label="Voltar ao topo">↑</button>
+
+<script>
+(function(){
+  // theme
+  var root=document.documentElement, btn=document.getElementById('themeBtn');
+  try{var saved=localStorage.getItem('fp-theme'); if(saved){root.setAttribute('data-theme',saved);} else if(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches){root.setAttribute('data-theme','dark');}}catch(e){}
+  btn.addEventListener('click',function(){var d=root.getAttribute('data-theme')==='dark'?'light':'dark';root.setAttribute('data-theme',d);try{localStorage.setItem('fp-theme',d)}catch(e){}});
+
+  // chips (mobile nav) from toc
+  var toc=document.getElementById('toc'), chips=document.getElementById('chips');
+  toc.querySelectorAll('a:not(.sub)').forEach(function(a){var c=a.cloneNode(true);c.textContent=a.textContent.replace(/^\d+\.\s*/,'');chips.appendChild(c);});
+
+  // scrollspy
+  var links=[].slice.call(document.querySelectorAll('aside.toc a, #chips a'));
+  var ids=[]; links.forEach(function(a){var id=a.getAttribute('href').slice(1); if(ids.indexOf(id)<0)ids.push(id);});
+  var targets=ids.map(function(id){return document.getElementById(id)}).filter(Boolean);
+  var bar=document.getElementById('progress'), back=document.getElementById('backtop');
+  function onScroll(){
+    var st=window.scrollY||document.documentElement.scrollTop, h=document.documentElement.scrollHeight-window.innerHeight;
+    bar.style.width=(h>0?(st/h*100):0)+'%';
+    back.classList.toggle('show',st>900);
+    var cur=null, best=-Infinity;
+    for(var i=0;i<targets.length;i++){ var t=targets[i].getBoundingClientRect().top; if(t<=110 && t>best){best=t;cur=targets[i].id;} }
+    links.forEach(function(a){ a.classList.toggle('on', a.getAttribute('href')==='#'+cur); });
+    var on=chips.querySelector('a.on'); if(on&&chips.scrollWidth>chips.clientWidth){var l=on.offsetLeft-chips.clientWidth/2+on.clientWidth/2; if(Math.abs(chips.scrollLeft-l)>40) chips.scrollTo({left:l,behavior:'smooth'});}
+  }
+  var ticking=false; window.addEventListener('scroll',function(){if(!ticking){requestAnimationFrame(function(){onScroll();ticking=false});ticking=true}},{passive:true});
+  onScroll();
+  back.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'})});
+
+  // quiz
+  var OPTS=['Alberto Caeiro','Ricardo Reis','Álvaro de Campos','Pessoa ortônimo'];
+  var Q=[
+    {v:'O rebanho é os meus pensamentos\nE os meus pensamentos são todos sensações.',a:0,e:'Metáfora do rebanho = sensações: Caeiro, <em>O Guardador de Rebanhos</em> IX.'},
+    {v:'Vem sentar-te comigo, Lídia, à beira do rio.',a:1,e:'Lídia (musa de Horácio) + rio como passagem do tempo: Ricardo Reis.'},
+    {v:'Ó rodas, ó engrenagens, r-r-r-r-r-r eterno!',a:2,e:'Apóstrofe às máquinas + onomatopeia: a fase futurista de Campos (<em>Ode Triunfal</em>).'},
+    {v:'Ó mar salgado, quanto do teu sal\nSão lágrimas de Portugal!',a:3,e:'“Mar Português”, de <em>Mensagem</em>, a vertente nacionalista do ortônimo.'},
+    {v:'Não sou nada.\nNunca serei nada.\nNão posso querer ser nada.',a:2,e:'Abertura de “Tabacaria”: a fase intimista de Campos.'},
+    {v:'O poeta é um fingidor.\nFinge tão completamente…',a:3,e:'“Autopsicografia”: a teoria do fingimento, pelo ortônimo.'},
+    {v:'Colhe as flores mas larga-as,\nDas mãos mal as olhaste.\nSenta-te ao sol. Abdica\nE sê rei de ti próprio.',a:1,e:'Imperativos de conselho, desapego estoico, gozo moderado: Reis.'},
+    {v:'O mundo não se fez para pensarmos nele\n(Pensar é estar doente dos olhos)',a:0,e:'Antimetafísica e primazia do ver: Caeiro, <em>O Guardador de Rebanhos</em> II.'},
+    {v:'Não me venham com conclusões!\nA única conclusão é morrer.',a:2,e:'Negação total e niilismo: “Lisbon Revisited (1923)”, de Campos.'},
+    {v:'A criança que fui chora na estrada.\nDeixei-a ali quando vim ser quem sou;',a:3,e:'Nostalgia da infância, verso regular com rima: lírica do ortônimo.'},
+    {v:'O Tejo é mais belo que o rio que corre pela minha aldeia,\nMas o Tejo não é mais belo que o rio que corre pela minha aldeia',a:0,e:'Paradoxo da objetividade: cada coisa real vale por si. Caeiro XX.'},
+    {v:'Não a Ti, Cristo, odeio ou te não quero.\nEm ti como nos outros creio deuses mais velhos.',a:1,e:'Paganismo politeísta e erudito: Cristo como mais um deus, “mais novo”. Reis.'},
+    {v:'É antes do ópio que a minh\'alma é doente.',a:2,e:'“Opiário”: a fase decadentista de Campos.'},
+    {v:'Louco, sim, louco, porque quiz grandeza\nQual a Sorte a não dá.',a:3,e:'D. Sebastião, de <em>Mensagem</em> (grafia antiga “quiz”): o ortônimo.'},
+    {v:'Pensar em Deus é desobedecer a Deus,\nPorque Deus quis que o não conhecêssemos,',a:0,e:'Recusa da metafísica religiosa: Caeiro, <em>O Guardador de Rebanhos</em> VI.'},
+    {v:'Chove? Nenhuma chuva cai…\nEntão onde é que eu sinto um dia\nEm que o ruído da chuva atrai\nA minha inútil agonia?',a:3,e:'Chuva interior × sol exterior, versos rimados e musicais: lírica do ortônimo.'}
+  ];
+  var box=document.getElementById('quiz'), scoreEl=document.getElementById('score'), right=0, answered=0;
+  function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;')}
+  function render(){
+    box.innerHTML=''; right=0; answered=0; upd();
+    Q.forEach(function(q,i){
+      var d=document.createElement('div'); d.className='q';
+      d.innerHTML='<div class="qv">'+(i+1)+'. “'+esc(q.v)+'”</div><div class="opts"></div><div class="fb"></div>';
+      var o=d.querySelector('.opts');
+      OPTS.forEach(function(t,k){var b=document.createElement('button');b.type='button';b.textContent=t;
+        b.addEventListener('click',function(){ if(d.classList.contains('done'))return; d.classList.add('done'); answered++;
+          if(k===q.a){b.classList.add('right');right++;} else {b.classList.add('wrong');o.children[q.a].classList.add('right');}
+          d.querySelector('.fb').innerHTML=(k===q.a?'<strong style="color:var(--ok)">Certo!</strong> ':'<strong style="color:var(--warn)">Resposta: '+OPTS[q.a]+'.</strong> ')+q.e; upd(); });
+        o.appendChild(b);});
+      box.appendChild(d);
+    });
+  }
+  function upd(){scoreEl.textContent='Acertos: '+right+' / '+answered+(answered===Q.length?' — '+(right>=14?'excelente!':right>=10?'bom, revise os erros.':'volte à seção 8 e tente de novo.'):'');}
+  document.getElementById('resetQuiz').addEventListener('click',render);
+  render();
+})();
+</script>
+</body>
+</html>
